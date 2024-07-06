@@ -4,7 +4,56 @@ require "config/function.php";
 require "config/functions.crud.php";
 session_start();
 
+// register student
+if ($pg == 'register') {
+    // get max code student
+    $query = "SELECT max(no_daftar) as maxKode FROM siswa";
+    $hasil = mysqli_query($koneksi, $query);
+    $maxKode  = mysqli_fetch_array($hasil);
+    $kodedaftar = $maxKode['maxKode'];
 
+    // generate new code student by incrementing the last code
+    $noUrut = (int) substr($kodedaftar, 8, 3);
+    $noUrut++;
+
+    // generate new code student
+    $char = "PPDB" . date('Y');
+    $newID = $char . sprintf("%03s", $noUrut);
+
+    // sanitize input data
+    $nama = mysqli_escape_string($koneksi, ucwords(strtolower($_POST['nama_siswa'])));
+
+    // prepare data to be inserted
+    $data = [
+        'no_daftar' => $newID,
+        'jenis' => $_POST['jenis'],
+        'asal_sekolah' => $_POST['asal_sekolah'],
+        'jurusan' => $_POST['jurusan'],
+        'nisn' => $_POST['nisn'],
+        'nama_siswa' => $nama,
+        'no_hp' => $_POST['nohp'],
+        'tempat_lahir' => ucwords($_POST['tempat']),
+        'tgl_lahir' => $_POST['tgllahir'],
+        'password' => $_POST['password'],
+        'status' => 0
+
+    ];
+
+    // check if nisn already registered
+    $cek = rowcount($koneksi, 'siswa', ['nisn' => $_POST['nisn']]);
+    if ($cek == 0) {
+        $exec = insert($koneksi, 'siswa', $data);
+
+        // redirect to index file and send success message via session
+        $_SESSION['success'] = "Pendaftaran Berhasil. Silahkan Login dengan NISN dan Password Anda";
+        return header('Location: index.php');
+    } else {
+        $pesan = [
+            'pesan' => 'Nisn sudah terdaftar'
+        ];
+        echo json_encode($pesan);
+    }
+}
 
 if ($pg == 'simpan') {
     include_once 'securimage/securimage.php';
@@ -15,7 +64,7 @@ if ($pg == 'simpan') {
         ];
         echo json_encode($pesan);
     } else {
-        
+
         $query = "SELECT max(no_daftar) as maxKode FROM siswa";
         $hasil = mysqli_query($koneksi, $query);
         $data  = mysqli_fetch_array($hasil);
@@ -28,8 +77,8 @@ if ($pg == 'simpan') {
         $data = [
             'no_daftar' => $newID,
             'jenis' => $_POST['jenis'],
-			'asal_sekolah' => $_POST['asal_sekolah'],
-			'jurusan' => $_POST['jurusan'],
+            'asal_sekolah' => $_POST['asal_sekolah'],
+            'jurusan' => $_POST['jurusan'],
             'nisn' => $_POST['nisn'],
             'nama_siswa' => $nama,
             'no_hp' => $_POST['nohp'],
@@ -37,90 +86,96 @@ if ($pg == 'simpan') {
             'tgl_lahir' => $_POST['tgllahir'],
             'password' => $_POST['password'],
             'status' => 0
-			
+
         ];
 
-$cek = rowcount($koneksi, 'siswa', ['nisn' => $_POST['nisn']]);
+        $cek = rowcount($koneksi, 'siswa', ['nisn' => $_POST['nisn']]);
         if ($cek == 0) {
             $exec = insert($koneksi, 'siswa', $data);
             $namapendek = explode(" ", $nama);
             $pesan = [
                 'pesan' => 'ok',
                 'id' => $newID,
-				'nisn' => $_POST['nisn'],
+                'nisn' => $_POST['nisn'],
                 'pass' => $_POST['password'],
                 'nama' => $namapendek[0]
             ];
-                $pesanWAadmin    = "Assalamualaikum wr wb.\n\nSiswa atas nama Yth.*$_POST[nama_siswa]*\n\nTelah Berhasil Mendaftar dengan No Pendaftaran *$newID*\n\n";
-				$pesanWA    = "Assalamualaikum wr wb.\n\nKepada Yth.*$_POST[nama_siswa]*\n\nProses Pendaftaran anda  di *$setting[nama_sekolah]* Telah berhasil\n\n";
-                $pesanWA    .= "*Berikut Detail Akun anda*.\n";
-                $pesanWA    .= "No Pendaftaran: *$newID*\n";
-                $pesanWA    .= "Nama: *$nama*\n";
-                $pesanWA    .= "Tempat Lahir: *$_POST[tempat]*\n";
-                $pesanWA    .= "Tanggal Lahir: *$_POST[tgllahir]*\n";
-                $pesanWA    .= "Asal Sekolah: *$_POST[asal_sekolah]*\n";
-				$pesanWA    .= "No Hp: *$_POST[nohp]*\n";
-                $pesanWA    .= "Username: *$_POST[nisn]*\n";
-                $pesanWA    .= "Password: *$_POST[password]*\n\n";;
-                $pesanWA    .= "Salam kami,\n";
-                $pesanWA    .= "*$setting[nama_sekolah]*\n\n";
-				
-				
-                
-                $dataWA = [
-                    'api_key' => $setting['apikey'],
-					'sender'  => $setting['sender'],
-					'number'  => $_POST['nohp'], //MASUKAN VARIABEL $noHP disini
-                    'message' => $pesanWA
-                ];
-				
-                
-                $curl = curl_init();
-                curl_setopt_array($curl, array(
-                  CURLOPT_URL => "$setting[server]/api/send_jadwal.php",
-                  CURLOPT_RETURNTRANSFER => true,
-                  CURLOPT_ENCODING => "",
-                  CURLOPT_MAXREDIRS => 10,
-                  CURLOPT_TIMEOUT => 0,
-                  CURLOPT_FOLLOWLOCATION => true,
-                  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                  CURLOPT_CUSTOMREQUEST => "POST",
-                  CURLOPT_POSTFIELDS => json_encode($dataWA))
-                );
-				
-                
-                $response = curl_exec($curl);
-                
-                curl_close($curl);
-				$dataWAadmin = [
-                    'api_key' => $setting['apikey'],
-					'sender'  => $setting['sender'],
-					'number'  => $setting['nolivechat'],
-                    'message' => $pesanWAadmin
-                ];
-				
-                
-                $curl = curl_init();
-                curl_setopt_array($curl, array(
-                  CURLOPT_URL => "$setting[server]/api/send_jadwal.php",
-                  CURLOPT_RETURNTRANSFER => true,
-                  CURLOPT_ENCODING => "",
-                  CURLOPT_MAXREDIRS => 10,
-                  CURLOPT_TIMEOUT => 0,
-                  CURLOPT_FOLLOWLOCATION => true,
-                  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                  CURLOPT_CUSTOMREQUEST => "POST",
-                  CURLOPT_POSTFIELDS => json_encode($dataWAadmin))
-                );
-				
-                
-                $response = curl_exec($curl);
-                
-                curl_close($curl);
-				
-                
-                
-                echo json_encode($pesan);
+            $pesanWAadmin    = "Assalamualaikum wr wb.\n\nSiswa atas nama Yth.*$_POST[nama_siswa]*\n\nTelah Berhasil Mendaftar dengan No Pendaftaran *$newID*\n\n";
+            $pesanWA    = "Assalamualaikum wr wb.\n\nKepada Yth.*$_POST[nama_siswa]*\n\nProses Pendaftaran anda  di *$setting[nama_sekolah]* Telah berhasil\n\n";
+            $pesanWA    .= "*Berikut Detail Akun anda*.\n";
+            $pesanWA    .= "No Pendaftaran: *$newID*\n";
+            $pesanWA    .= "Nama: *$nama*\n";
+            $pesanWA    .= "Tempat Lahir: *$_POST[tempat]*\n";
+            $pesanWA    .= "Tanggal Lahir: *$_POST[tgllahir]*\n";
+            $pesanWA    .= "Asal Sekolah: *$_POST[asal_sekolah]*\n";
+            $pesanWA    .= "No Hp: *$_POST[nohp]*\n";
+            $pesanWA    .= "Username: *$_POST[nisn]*\n";
+            $pesanWA    .= "Password: *$_POST[password]*\n\n";;
+            $pesanWA    .= "Salam kami,\n";
+            $pesanWA    .= "*$setting[nama_sekolah]*\n\n";
+
+
+
+            $dataWA = [
+                'api_key' => $setting['apikey'],
+                'sender'  => $setting['sender'],
+                'number'  => $_POST['nohp'], //MASUKAN VARIABEL $noHP disini
+                'message' => $pesanWA
+            ];
+
+
+            $curl = curl_init();
+            curl_setopt_array(
+                $curl,
+                array(
+                    CURLOPT_URL => "$setting[server]/api/send_jadwal.php",
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_ENCODING => "",
+                    CURLOPT_MAXREDIRS => 10,
+                    CURLOPT_TIMEOUT => 0,
+                    CURLOPT_FOLLOWLOCATION => true,
+                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                    CURLOPT_CUSTOMREQUEST => "POST",
+                    CURLOPT_POSTFIELDS => json_encode($dataWA)
+                )
+            );
+
+
+            $response = curl_exec($curl);
+
+            curl_close($curl);
+            $dataWAadmin = [
+                'api_key' => $setting['apikey'],
+                'sender'  => $setting['sender'],
+                'number'  => $setting['nolivechat'],
+                'message' => $pesanWAadmin
+            ];
+
+
+            $curl = curl_init();
+            curl_setopt_array(
+                $curl,
+                array(
+                    CURLOPT_URL => "$setting[server]/api/send_jadwal.php",
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_ENCODING => "",
+                    CURLOPT_MAXREDIRS => 10,
+                    CURLOPT_TIMEOUT => 0,
+                    CURLOPT_FOLLOWLOCATION => true,
+                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                    CURLOPT_CUSTOMREQUEST => "POST",
+                    CURLOPT_POSTFIELDS => json_encode($dataWAadmin)
+                )
+            );
+
+
+            $response = curl_exec($curl);
+
+            curl_close($curl);
+
+
+
+            echo json_encode($pesan);
         } else {
             $pesan = [
                 'pesan' => 'Nisn sudah terdaftar'
@@ -138,7 +193,7 @@ if ($pg == 'simpan2') {
         ];
         echo json_encode($pesan);
     } else {
-        
+
         $query = "SELECT max(no_daftar) as maxKode FROM siswa";
         $hasil = mysqli_query($koneksi, $query);
         $data  = mysqli_fetch_array($hasil);
@@ -151,7 +206,7 @@ if ($pg == 'simpan2') {
         $data = [
             'no_daftar' => $newID,
             'jenis' => $_POST['jenis'],
-			'asal_sekolah' => $_POST['asal_sekolah'],
+            'asal_sekolah' => $_POST['asal_sekolah'],
             'nisn' => $_POST['nisn'],
             'nama_siswa' => $nama,
             'no_hp' => $_POST['nohp'],
@@ -159,24 +214,24 @@ if ($pg == 'simpan2') {
             'tgl_lahir' => $_POST['tgllahir'],
             'password' => $_POST['password'],
             'status' => 0
-			
+
         ];
 
-$cek = rowcount($koneksi, 'siswa', ['nisn' => $_POST['nisn']]);
+        $cek = rowcount($koneksi, 'siswa', ['nisn' => $_POST['nisn']]);
         if ($cek == 0) {
             $exec = insert($koneksi, 'siswa', $data);
             $namapendek = explode(" ", $nama);
             $pesan = [
                 'pesan' => 'ok',
                 'id' => $newID,
-				'nisn' => $_POST['nisn'],
+                'nisn' => $_POST['nisn'],
                 'pass' => $_POST['password'],
                 'nama' => $namapendek[0]
             ];
 
 
 
-echo json_encode($pesan);
+            echo json_encode($pesan);
         } else {
             $pesan = [
                 'pesan' => 'Nisn sudah terdaftar'
@@ -207,7 +262,7 @@ if ($pg == 'login') {
             } else {
                 //if($ceklogin==0){
                 $_SESSION['id_siswa'] = $siswa['id_siswa'];
-               
+
                 $data = [
                     'pesan' => 'ok'
                 ];
@@ -215,7 +270,7 @@ if ($pg == 'login') {
             }
         }
     }
-    }
+}
 if ($pg == 'login2') {
 
     $username = mysqli_escape_string($koneksi, $_POST['username']);
