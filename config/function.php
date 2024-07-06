@@ -8,7 +8,7 @@ if (!function_exists('base_url')) {
 			$http = isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) !== 'off' ? 'https' : 'http';
 			$hostname = $_SERVER['HTTP_HOST'];
 			$dir =  str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
-			$core = preg_split('@/@', str_replace($_SERVER['DOCUMENT_ROOT'], '', realpath(dirname(__FILE__))), NULL, PREG_SPLIT_NO_EMPTY);
+			$core = preg_split('@/@', str_replace($_SERVER['DOCUMENT_ROOT'], '', realpath(dirname(__FILE__))), -1, PREG_SPLIT_NO_EMPTY);
 			$core = $core[0];
 			$tmplt = $atRoot ? ($atCore ? "%s://%s/%s/" : "%s://%s/") : ($atCore ? "%s://%s/%s/" : "%s://%s%s");
 			$end = $atRoot ? ($atCore ? $core : $hostname) : ($atCore ? $core : $dir);
@@ -321,7 +321,7 @@ $golongandarah = [
 	"AB",
 	"O",
 	"Tidak Tahu"
-	
+
 ];
 
 $pendidikan = [
@@ -432,8 +432,9 @@ function terbilang($x, $style = 3)
 	}
 	return $hasil;
 }
-function tgl_indo($tanggal){
-	$bulan = array (
+function tgl_indo($tanggal)
+{
+	$bulan = array(
 		1 =>   'Januari',
 		'Februari',
 		'Maret',
@@ -448,47 +449,43 @@ function tgl_indo($tanggal){
 		'Desember'
 	);
 	$pecahkan = explode('-', $tanggal);
-	
+
 	// variabel pecahkan 0 = tanggal
 	// variabel pecahkan 1 = bulan
 	// variabel pecahkan 2 = tahun
- 
-	return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0];
+
+	return $pecahkan[2] . ' ' . $bulan[(int)$pecahkan[1]] . ' ' . $pecahkan[0];
 }
 function waktu_lalu($original)
 {
-  date_default_timezone_set('Asia/Jakarta');
-  $chunks = array(
-      array(60 * 60 * 24 * 365, 'tahun'),
-      array(60 * 60 * 24 * 30, 'bulan'),
-      array(60 * 60 * 24 * 7, 'minggu'),
-      array(60 * 60 * 24, 'hari'),
-      array(60 * 60, 'jam'),
-      array(60, 'menit'),
-  );
-  $today = time();
-  $since = $today - $original;
- 
-  if ($since > 604800)
-  {
-    $print = date("M jS", $original);
-    if ($since > 31536000)
-    {
-      $print .= ", " . date("Y", $original);
-    }
-    return $print;
-  }
- 
-  for ($i = 0, $j = count($chunks); $i < $j; $i++)
-  {
-    $seconds = $chunks[$i][0];
-    $name = $chunks[$i][1];
- 
-    if (($count = floor($since / $seconds)) != 0)
-      break;
-  }
- 
-  $print = ($count == 1) ? '1 ' . $name : "$count {$name}";
-  return $print . ' yang lalu';
-}
+	date_default_timezone_set('Asia/Jakarta');
+	$chunks = array(
+		array(60 * 60 * 24 * 365, 'tahun'),
+		array(60 * 60 * 24 * 30, 'bulan'),
+		array(60 * 60 * 24 * 7, 'minggu'),
+		array(60 * 60 * 24, 'hari'),
+		array(60 * 60, 'jam'),
+		array(60, 'menit'),
+	);
+	$today = time();
+	$since = $today - $original;
 
+	if ($since > 604800) {
+		$print = date("M jS", $original);
+		if ($since > 31536000) {
+			$print .= ", " . date("Y", $original);
+		}
+		return $print;
+	}
+
+	for ($i = 0, $j = count($chunks); $i < $j; $i++) {
+		$seconds = $chunks[$i][0];
+		$name = $chunks[$i][1];
+
+		if (($count = floor($since / $seconds)) != 0)
+			break;
+	}
+
+	$print = ($count == 1) ? '1 ' . $name : "$count {$name}";
+	return $print . ' yang lalu';
+}

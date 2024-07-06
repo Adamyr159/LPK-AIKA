@@ -59,16 +59,17 @@ $tahun2 = $tahun1 + 1;
       }
     }
 
-    @media screen and (min-width: 361px, max-width: 720px) {
+    /* @media screen and (min-width: 361px, max-width: 720px) { */
 
-      #rc-imageselect,
-      .g-recaptcha {
-        transform: scale(0.88);
-        -webkit-transform: scale(0.88);
-        transform-origin: 0 0;
-        -webkit-transform-origin: 0 0;
-      }
+    #rc-imageselect,
+    .g-recaptcha {
+      transform: scale(0.88);
+      -webkit-transform: scale(0.88);
+      transform-origin: 0 0;
+      -webkit-transform-origin: 0 0;
     }
+
+    /* } */
   </style>
   <style>
     .pre-loader {
