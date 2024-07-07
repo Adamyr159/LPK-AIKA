@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Jul 07, 2024 at 03:50 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Host: 127.0.0.1
+-- Generation Time: Jul 01, 2024 at 08:00 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -448,25 +448,15 @@ CREATE TABLE `siswa` (
   `jadwal_tes` varchar(100) DEFAULT NULL,
   `sesi_tes` varchar(100) DEFAULT NULL,
   `bta` varchar(10) DEFAULT NULL,
-  `skl` varchar(5) DEFAULT NULL,
-  `akademik_jenjang` varchar(45) DEFAULT NULL,
-  `akademik_fakultas` varchar(40) DEFAULT NULL,
-  `akademik_prodi` varchar(40) DEFAULT NULL,
-  `akademik_tahun_masuk` varchar(10) DEFAULT NULL,
-  `pekerjaan_nama` varchar(40) DEFAULT NULL,
-  `pekerjaan_tempat` varchar(100) DEFAULT NULL,
-  `pekerjaan_alamat` varchar(100) DEFAULT NULL,
-  `pekerjaan_gelombang` int(3) DEFAULT NULL
+  `skl` varchar(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `siswa`
 --
 
-INSERT INTO `siswa` (`id_siswa`, `nis`, `no_daftar`, `kelas`, `nama_siswa`, `nisn`, `warga_siswa`, `nik`, `tempat_lahir`, `tgl_lahir`, `jk`, `anak_ke`, `saudara`, `agama`, `cita`, `no_hp`, `email`, `hobi`, `status_tinggal_siswa`, `prov`, `kab`, `kec`, `desa`, `alamat_siswa`, `kordinat`, `kodepos_siswa`, `transportasi`, `jarak`, `waktu`, `biaya_sekolah`, `keb_khusus`, `keb_disabilitas`, `tk`, `paud`, `hepatitis`, `polio`, `bcg`, `campak`, `dpt`, `covid`, `no_kip`, `no_kks`, `no_pkh`, `no_kk`, `kepala_keluarga`, `nama_ayah`, `status_ayah`, `warga_ayah`, `nik_ayah`, `tempat_lahir_ayah`, `tgl_lahir_ayah`, `pendidikan_ayah`, `pekerjaan_ayah`, `penghasilan_ayah`, `no_hp_ayah`, `domisili_ayah`, `status_tmp_tinggal_ayah`, `prov_ayah`, `kab_ayah`, `kec_ayah`, `desa_ayah`, `alamat_ayah`, `kodepos_ayah`, `nama_ibu`, `status_ibu`, `warga_ibu`, `nik_ibu`, `tempat_lahir_ibu`, `tgl_lahir_ibu`, `pendidikan_ibu`, `pekerjaan_ibu`, `penghasilan_ibu`, `no_hp_ibu`, `status_tinggal_ibu`, `domisili_ibu`, `status_tmp_tinggal_ibu`, `prov_ibu`, `kab_ibu`, `kec_ibu`, `desa_ibu`, `alamat_ibu`, `kodepos_ibu`, `status_wali`, `nama_wali`, `warga_wali`, `nik_wali`, `tempat_lahir_wali`, `tgl_lahir_wali`, `pendidikan_wali`, `pekerjaan_wali`, `penghasilan_wali`, `no_hp_wali`, `domisili_wali`, `prov_wali`, `kab_wali`, `kec_wali`, `desa_wali`, `alamat_wali`, `kodepos_wali`, `foto`, `jurusan`, `file_kip`, `file_ktp`, `file_kk`, `file_ijazah`, `file_akte`, `file_shun`, `tgl_mutasi`, `surat_masuk`, `alasan_mutasi`, `asal_sekolah`, `npsn_sekolah`, `seri_ijazah`, `sekolah_mutasi`, `level`, `aktif`, `status`, `tgl_siswa`, `online`, `password`, `jenis`, `kelasmutasi`, `konfirmasi`, `tahun_lulus`, `no_ijazahalumni`, `golongandarah`, `penyakit`, `bin1`, `bin2`, `bin3`, `bin4`, `bin5`, `mat1`, `mat2`, `mat3`, `mat4`, `mat5`, `ipa1`, `ipa2`, `ipa3`, `ipa4`, `ipa5`, `pai1`, `pai2`, `pai3`, `pai4`, `pai5`, `jadwal_tes`, `sesi_tes`, `bta`, `skl`, `akademik_jenjang`, `akademik_fakultas`, `akademik_prodi`, `akademik_tahun_masuk`, `pekerjaan_nama`, `pekerjaan_tempat`, `pekerjaan_alamat`, `pekerjaan_gelombang`) VALUES
-(642, NULL, 'PPDB2024001', NULL, 'Adit', '12345699', NULL, NULL, 'Jakarta', '2024-06-11', 'L', NULL, NULL, NULL, NULL, '19260196103311', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'assets/upload/berkas421.png', 'BOARDING SCHOOL', NULL, NULL, NULL, NULL, 'assets/upload/berkas/siswa35.png', NULL, NULL, NULL, NULL, 'SMK', NULL, NULL, NULL, NULL, 0, 1, NULL, 0, '12345699', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(643, '', 'PPDB2024002', '', 'Aldi Mahardiansyah', '879798987', 'WNI', '', 'Lenteng Agung, Srengseng Sawah, Kec. Jagakarsa, Kota Jakarta Selatan', '2024-07-02', 'L', NULL, NULL, 'Islam', NULL, '085779705274', 'aldimdiansyah@gmail.com', 'Kesenian', NULL, NULL, NULL, NULL, NULL, 'Kp. Babakan empang rt.01/01, Ds. Purasari, Kec. Leuwiliang', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', NULL, NULL, NULL, 0, 0, NULL, 0, '12345678', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 's1', 'Teknik', 'Informatika', '2020', 'Programmer', 'Jarvis', 'Depok', 2),
-(644, NULL, 'PPDB2024003', NULL, 'Adammmm', '9890798', NULL, NULL, 'Lenteng Agung, Srengseng Sawah, Kec. Jagakarsa, Kota Jakarta Selatan', '2024-07-01', NULL, NULL, NULL, NULL, NULL, '08127867868', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'adam@gmail.com', NULL, NULL, NULL, NULL, 0, 0, NULL, 0, '12345678', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `siswa` (`id_siswa`, `nis`, `no_daftar`, `kelas`, `nama_siswa`, `nisn`, `warga_siswa`, `nik`, `tempat_lahir`, `tgl_lahir`, `jk`, `anak_ke`, `saudara`, `agama`, `cita`, `no_hp`, `email`, `hobi`, `status_tinggal_siswa`, `prov`, `kab`, `kec`, `desa`, `alamat_siswa`, `kordinat`, `kodepos_siswa`, `transportasi`, `jarak`, `waktu`, `biaya_sekolah`, `keb_khusus`, `keb_disabilitas`, `tk`, `paud`, `hepatitis`, `polio`, `bcg`, `campak`, `dpt`, `covid`, `no_kip`, `no_kks`, `no_pkh`, `no_kk`, `kepala_keluarga`, `nama_ayah`, `status_ayah`, `warga_ayah`, `nik_ayah`, `tempat_lahir_ayah`, `tgl_lahir_ayah`, `pendidikan_ayah`, `pekerjaan_ayah`, `penghasilan_ayah`, `no_hp_ayah`, `domisili_ayah`, `status_tmp_tinggal_ayah`, `prov_ayah`, `kab_ayah`, `kec_ayah`, `desa_ayah`, `alamat_ayah`, `kodepos_ayah`, `nama_ibu`, `status_ibu`, `warga_ibu`, `nik_ibu`, `tempat_lahir_ibu`, `tgl_lahir_ibu`, `pendidikan_ibu`, `pekerjaan_ibu`, `penghasilan_ibu`, `no_hp_ibu`, `status_tinggal_ibu`, `domisili_ibu`, `status_tmp_tinggal_ibu`, `prov_ibu`, `kab_ibu`, `kec_ibu`, `desa_ibu`, `alamat_ibu`, `kodepos_ibu`, `status_wali`, `nama_wali`, `warga_wali`, `nik_wali`, `tempat_lahir_wali`, `tgl_lahir_wali`, `pendidikan_wali`, `pekerjaan_wali`, `penghasilan_wali`, `no_hp_wali`, `domisili_wali`, `prov_wali`, `kab_wali`, `kec_wali`, `desa_wali`, `alamat_wali`, `kodepos_wali`, `foto`, `jurusan`, `file_kip`, `file_ktp`, `file_kk`, `file_ijazah`, `file_akte`, `file_shun`, `tgl_mutasi`, `surat_masuk`, `alasan_mutasi`, `asal_sekolah`, `npsn_sekolah`, `seri_ijazah`, `sekolah_mutasi`, `level`, `aktif`, `status`, `tgl_siswa`, `online`, `password`, `jenis`, `kelasmutasi`, `konfirmasi`, `tahun_lulus`, `no_ijazahalumni`, `golongandarah`, `penyakit`, `bin1`, `bin2`, `bin3`, `bin4`, `bin5`, `mat1`, `mat2`, `mat3`, `mat4`, `mat5`, `ipa1`, `ipa2`, `ipa3`, `ipa4`, `ipa5`, `pai1`, `pai2`, `pai3`, `pai4`, `pai5`, `jadwal_tes`, `sesi_tes`, `bta`, `skl`) VALUES
+(642, NULL, 'PPDB2024001', NULL, 'Adit', '12345699', NULL, NULL, 'Jakarta', '2024-06-11', 'L', NULL, NULL, NULL, NULL, '19260196103311', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'assets/upload/berkas421.png', 'BOARDING SCHOOL', NULL, NULL, NULL, NULL, 'assets/upload/berkas/siswa35.png', NULL, NULL, NULL, NULL, 'SMK', NULL, NULL, NULL, NULL, 0, 1, NULL, 0, '12345699', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -547,7 +537,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nama_user`, `level`, `username`, `password`, `status`, `foto`, `mapel`, `nuptk`, `jenkel`, `tempat_lahir`, `tgl_lahir`, `tmt`, `no_sk`, `jenis`, `no_hp`, `nik`, `akses`, `kelas`, `pendidikan`, `status_tmp_tinggal`, `prov`, `kab`, `kec`, `desa`, `alamat`, `kodepos`) VALUES
-(85, 'admin', '', 'admin', '$2y$10$IVNmVImuKZmpslnN9ErJq.Y1GU/GOQZp3EoafkWXNvnFUf9NjjbYS', 2, 0, '', '', '', '', '0000-00-00', 0000, '', '', '', 0, 'ppdb', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(85, 'admin', '', 'admin', '$2y$10$IVNmVImuKZmpslnN9ErJq.Y1GU/GOQZp3EoafkWXNvnFUf9NjjbYS', 2, 0, '', '', '', '', '0000-00-00', '0000', '', '', '', 0, 'ppdb', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -683,7 +673,7 @@ ALTER TABLE `pengumuman`
 -- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id_siswa` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=645;
+  MODIFY `id_siswa` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=643;
 
 --
 -- AUTO_INCREMENT for table `user`
