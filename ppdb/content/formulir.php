@@ -129,7 +129,7 @@ $jenjang = fetch($koneksi, 'jenjang', ['id_jenjang' => $siswa['kelas']]);
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<form id="form-foto">
-				<input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control"="">
+				<input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control">
 				<div class="modal-header">
 					<h5 class="modal-title">Upload Foto Siswa</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -165,7 +165,7 @@ $jenjang = fetch($koneksi, 'jenjang', ['id_jenjang' => $siswa['kelas']]);
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<form id="form-ubahpass">
-				<input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control"="">
+				<input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control">
 				<div class="modal-header">
 					<h5 class="modal-title">Ubah password</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -185,7 +185,7 @@ $jenjang = fetch($koneksi, 'jenjang', ['id_jenjang' => $siswa['kelas']]);
 					</div>
 					<div class="form-group">
 						<label>Password</label>
-						<input class="form-control" type="text" name="password" value="<?= $siswa['password'] ?>"="" />
+						<input class="form-control" type="text" name="password" value="<?= $siswa['password'] ?>" />
 
 					</div>
 
@@ -295,8 +295,8 @@ $jenjang = fetch($koneksi, 'jenjang', ['id_jenjang' => $siswa['kelas']]);
 
 						<!-- DATA DIRI -->
 						<div class="tab-pane fade show active" id="datadiri" role="tabpanel" aria-labelledby="data-diri">
-							<form id="form-datadiri">
-								<input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control"="">
+							<form id="form-datadirii" action="content/crud.php?pg=update-data-diri" method="POST">
+								<input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control">
 								<div class="form-row">
 
 									<div class="form-group col-md-12">
@@ -306,7 +306,7 @@ $jenjang = fetch($koneksi, 'jenjang', ['id_jenjang' => $siswa['kelas']]);
 													<i class="text-info"><b>Nama Lengkap</b></i>
 												</div>
 											</div>
-											<input class="form-control" type="text" name="nama_siswa" value="<?= $siswa['nama_siswa'] ?>"="" />
+											<input class="form-control" type="text" name="nama_siswa" value="<?= $siswa['nama_siswa'] ?>" />
 										</div>
 									</div>
 									<div class="form-group col-md-6">
@@ -336,18 +336,18 @@ $jenjang = fetch($koneksi, 'jenjang', ['id_jenjang' => $siswa['kelas']]);
 													<i class="text-info"><b>NIM</b></i>
 												</div>
 											</div>
-											<input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="10" minlength="10" type="text" name="nisn" value="<?= $siswa['nisn'] ?>"="" />
+											<input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="10" minlength="10" type="text" name="nisn" value="<?= $siswa['nisn'] ?>" />
 										</div>
 									</div>
 
 									<div class="form-group col-md-6">
 										<div class="input-group">
 											<div class="input-group-prepend">
-														<div class="input-group-text">
-															<i class="text-info"><b>Alamat</b></i>
-														</div>
-													</div>
-											<input class="form-control" onkeypress="return hanyaAngka(this);" type="text" name="nis" value="<?= $siswa['nis'] ?>"="" />
+												<div class="input-group-text">
+													<i class="text-info"><b>Alamat</b></i>
+												</div>
+											</div>
+											<input class="form-control" onkeypress="return hanyaAngka(this);" type="text" name="alamat_siswa" value="<?= $siswa['alamat_siswa'] ?>" />
 										</div>
 									</div>
 
@@ -358,7 +358,7 @@ $jenjang = fetch($koneksi, 'jenjang', ['id_jenjang' => $siswa['kelas']]);
 													<i class="text-info"><strong>Tempat Lahir</strong></i>
 												</div>
 											</div>
-											<input class="form-control" type="text" name="tempat_lahir" value="<?= $siswa['tempat_lahir'] ?>"="" />
+											<input class="form-control" type="text" name="tempat_lahir" value="<?= $siswa['tempat_lahir'] ?>" />
 										</div>
 									</div>
 
@@ -369,7 +369,7 @@ $jenjang = fetch($koneksi, 'jenjang', ['id_jenjang' => $siswa['kelas']]);
 													<i class="text-info"><strong>Tanggal Lahir</strong></i>
 												</div>
 											</div>
-											<input class="form-control" type="date" name="tgl_lahir" value="<?= $siswa['tgl_lahir'] ?>"="" />
+											<input class="form-control" type="date" name="tgl_lahir" value="<?= $siswa['tgl_lahir'] ?>" />
 										</div>
 									</div>
 									<div class="form-group col-md-4">
@@ -413,7 +413,7 @@ $jenjang = fetch($koneksi, 'jenjang', ['id_jenjang' => $siswa['kelas']]);
 													<i class="text-info"><b>No Hp</b></i>
 												</div>
 											</div>
-											<input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="13" minlength="10" type="text" name="no_hp" value="<?= $siswa['no_hp'] ?>"="" />
+											<input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="13" minlength="10" type="text" name="no_hp" value="<?= $siswa['no_hp'] ?>" />
 										</div>
 									</div>
 
@@ -451,328 +451,328 @@ $jenjang = fetch($koneksi, 'jenjang', ['id_jenjang' => $siswa['kelas']]);
 
 
 
-						<div class="card-header bg-se">
-							<ul class="nav nav-pills nav-fill" id="myTab3" role="tablist">
-								<li class="nav-item">
-									<a class="nav-link active" id="data-diri" data-toggle="tab" href="#datadiri" role="tab" aria-controls="diri" aria-selected="true">Data Akademik</a>
-								</li>
-								<!--<li class="nav-item">
+								<div class="card-header bg-se">
+									<ul class="nav nav-pills nav-fill" id="myTab3" role="tablist">
+										<li class="nav-item">
+											<a class="nav-link active" id="data-diri" data-toggle="tab" href="#datadiri" role="tab" aria-controls="diri" aria-selected="true">Data Akademik</a>
+										</li>
+										<!--<li class="nav-item">
                                             <a class="nav-link" id="data-dokumen" data-toggle="tab" href="#datadokumen" role="tab" aria-controls="wali" aria-selected="false">Data Dokumen</a>
                                         </li>-->
-							</ul>
-						</div>
-
-
-						<!-- DATA AKADEMIK -->
-						<div class="tab-pane fade show active" id="datadiri" role="tabpanel" aria-labelledby="data-diri">
-							<form id="form-datadiri">
-								<input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control"="">
-								<div class="form-row">
-
-									<div class="form-group col-md-12">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Jenjang</b></i>
-												</div>
-											</div>
-											<input class="form-control" type="text" name="" value=""="" />
-										</div>
-									</div>
-									<div class="form-group col-md-12">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Fakultas</b></i>
-												</div>
-											</div>
-											<input class="form-control" type="text" name="" value=""="" />
-										</div>
-									</div>
-									<div class="form-group col-md-12">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Program Studi</b></i>
-												</div>
-											</div>
-											<input class="form-control" type="text" name="" value=""="" />
-										</div>
-									</div>
-									<div class="form-group col-md-12">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Tahun Masuk</b></i>
-												</div>
-											</div>
-											<input class="form-control" type="text" name="" value=""="" />
-										</div>
-									</div>
+									</ul>
 								</div>
 
-						<div class="card-header bg-se">
-							<ul class="nav nav-pills nav-fill" id="myTab3" role="tablist">
-								<li class="nav-item">
-									<a class="nav-link active" id="data-diri" data-toggle="tab" href="#datadiri" role="tab" aria-controls="diri" aria-selected="true">Data Pekerjaan</a>
-								</li>
-								<!--<li class="nav-item">
+
+								<!-- DATA AKADEMIK -->
+								<div class="tab-pane fade show active" id="datadiri" role="tabpanel" aria-labelledby="data-diri">
+									<form id="form-datadiri">
+										<input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control">
+										<div class="form-row">
+
+											<div class="form-group col-md-12">
+												<div class="input-group">
+													<div class="input-group-prepend">
+														<div class="input-group-text">
+															<i class="text-info"><b>Jenjang</b></i>
+														</div>
+													</div>
+													<input class="form-control" type="text" name="akademik_jenjang" value="<?= $siswa['akademik_jenjang'] ?>" />
+												</div>
+											</div>
+											<div class="form-group col-md-12">
+												<div class="input-group">
+													<div class="input-group-prepend">
+														<div class="input-group-text">
+															<i class="text-info"><b>Fakultas</b></i>
+														</div>
+													</div>
+													<input class="form-control" type="text" name="akademik_fakultas" value="<?= $siswa['akademik_fakultas'] ?>" />
+												</div>
+											</div>
+											<div class="form-group col-md-12">
+												<div class="input-group">
+													<div class="input-group-prepend">
+														<div class="input-group-text">
+															<i class="text-info"><b>Program Studi</b></i>
+														</div>
+													</div>
+													<input class="form-control" type="text" name="akademik_prodi" value="<?= $siswa['akademik_prodi'] ?>" />
+												</div>
+											</div>
+											<div class="form-group col-md-12">
+												<div class="input-group">
+													<div class="input-group-prepend">
+														<div class="input-group-text">
+															<i class="text-info"><b>Tahun Masuk</b></i>
+														</div>
+													</div>
+													<input class="form-control" type="text" name="akademik_tahun_masuk" value="<?= $siswa['akademik_tahun_masuk'] ?>" />
+												</div>
+											</div>
+										</div>
+
+										<div class="card-header bg-se">
+											<ul class="nav nav-pills nav-fill" id="myTab3" role="tablist">
+												<li class="nav-item">
+													<a class="nav-link active" id="data-diri" data-toggle="tab" href="#datadiri" role="tab" aria-controls="diri" aria-selected="true">Data Pekerjaan</a>
+												</li>
+												<!--<li class="nav-item">
                                             <a class="nav-link" id="data-dokumen" data-toggle="tab" href="#datadokumen" role="tab" aria-controls="wali" aria-selected="false">Data Dokumen</a>
                                         </li>-->
-							</ul>
-						</div>
-						<!-- DATA PEKERJAAN -->
-						<div class="tab-pane fade show active" id="datadiri" role="tabpanel" aria-labelledby="data-diri">
-							<form id="form-datadiri">
-								<input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control"="">
-								<div class="form-row">
+											</ul>
+										</div>
+										<!-- DATA PEKERJAAN -->
+										<div class="tab-pane fade show active" id="datadiri" role="tabpanel" aria-labelledby="data-diri">
+											<form id="form-datadiri">
+												<input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control">
+												<div class="form-row">
 
-									<div class="form-group col-md-12">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Pekerjaan</b></i>
-												</div>
-											</div>
-											<input class="form-control" type="text" name="nama_siswa" value=""="" />
+													<div class="form-group col-md-12">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Pekerjaan</b></i>
+																</div>
+															</div>
+															<input class="form-control" type="text" name="pekerjaan_nama" value="<?= $siswa['pekerjaan_nama'] ?>" />
+														</div>
+													</div>
+													<div class="form-group col-md-12">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Tempat Kerja</b></i>
+																</div>
+															</div>
+															<input class="form-control" type="text" name="pekerjaan_tempat" value="<?= $siswa['pekerjaan_tempat'] ?>" />
+														</div>
+													</div>
+													<div class="form-group col-md-12">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Alamat</b></i>
+																</div>
+															</div>
+															<input class="form-control" type="text" name="pekerjaan_alamat" value="<?= $siswa['pekerjaan_alamat'] ?>" />
+														</div>
+													</div>
+													<div class="form-group col-md-12">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Pilih Gelombang</b></i>
+																</div>
+															</div>
+															<input class="form-control" type="text" name="pekerjaan_gelombang" value="<?= $siswa['pekerjaan_gelombang'] ?>" />
+														</div>
+													</div>
+													<div class="form-group">
+														<div class="col-sm-12">
+															<button type="submit" id="btnsimpan" name="submit" class="btn btn-primary">Simpan</button>
+														</div>
+													</div>
+											</form>
 										</div>
-									</div>
-									<div class="form-group col-md-12">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Tempat Kerja</b></i>
-												</div>
-											</div>
-											<input class="form-control" type="text" name="nama_siswa" value=""="" />
-										</div>
-									</div>
-									<div class="form-group col-md-12">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Alamat</b></i>
-												</div>
-											</div>
-											<input class="form-control" type="text" name="nama_siswa" value=""="" />
-										</div>
-									</div>
-									<div class="form-group col-md-12">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Pilih Gelombang</b></i>
-												</div>
-											</div>
-											<input class="form-control" type="text" name="nama_siswa" value=""="" />
-										</div>
-									</div>
-								<div class="form-group">
-									<div class="col-sm-12">
-										<button type="submit" id="btnsimpan" name="submit" class="btn btn-primary">Simpan</button>
-									</div>
-								</div>
-							</form>
-						</div>
 
 
-						<!-- DATA AYAH -->
-						<div class="tab-pane fade" id="dataayah" role="tabpanel" aria-labelledby="data-ayah">
-							<form id="form-dataayah">
-								<input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control"="">
-								<div class="form-row">
-									<div class="form-group col-md-12">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Nama</b></i>
-												</div>
-											</div>
-											<input class="form-control" type="text" name="nama_ayah" value="<?= $siswa['nama_ayah'] ?>"="" />
-										</div>
-									</div>
+										<!-- DATA AYAH -->
+										<div class="tab-pane fade" id="dataayah" role="tabpanel" aria-labelledby="data-ayah">
+											<form id="form-dataayah">
+												<input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control">
+												<div class="form-row">
+													<div class="form-group col-md-12">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Nama</b></i>
+																</div>
+															</div>
+															<input class="form-control" type="text" name="nama_ayah" value="<?= $siswa['nama_ayah'] ?>" />
+														</div>
+													</div>
 
-									<div class="form-group col-md-12">
-										<div class="text-info"><strong>Status Ayah</strong></div>
-										<div class="custom-control custom-radio custom-control-inline">
-											<input type="radio" id="status_ayah" name="status_ayah" class="custom-control-input" value="Masih Hidup" <?php if ($siswa['status_ayah'] == 'Masih Hidup') echo 'checked' ?>>
-											<label class="custom-control-label" for="status_ayah">Masih Hidup</label>
-										</div>
-										<div class="custom-control custom-radio custom-control-inline">
-											<input type="radio" id="meninggal" name="status_ayah" class="custom-control-input" value="Sudah Meninggal" <?php if ($siswa['status_ayah'] == 'Sudah Meninggal') echo 'checked' ?>>
-											<label class="custom-control-label" for="meninggal">Sudah Meninggal</label>
-										</div>
-										<div class="custom-control custom-radio custom-control-inline">
-											<input type="radio" id="tidak_diketahui" name="status_ayah" class="custom-control-input" value="Tidak Diketahui" <?php if ($siswa['status_ayah'] == 'Tidak Diketahui') echo 'checked' ?>>
-											<label class="custom-control-label" for="tidak_diketahui">Tidak Diketahui</label>
-										</div>
-									</div>
+													<div class="form-group col-md-12">
+														<div class="text-info"><strong>Status Ayah</strong></div>
+														<div class="custom-control custom-radio custom-control-inline">
+															<input type="radio" id="status_ayah" name="status_ayah" class="custom-control-input" value="Masih Hidup" <?php if ($siswa['status_ayah'] == 'Masih Hidup') echo 'checked' ?>>
+															<label class="custom-control-label" for="status_ayah">Masih Hidup</label>
+														</div>
+														<div class="custom-control custom-radio custom-control-inline">
+															<input type="radio" id="meninggal" name="status_ayah" class="custom-control-input" value="Sudah Meninggal" <?php if ($siswa['status_ayah'] == 'Sudah Meninggal') echo 'checked' ?>>
+															<label class="custom-control-label" for="meninggal">Sudah Meninggal</label>
+														</div>
+														<div class="custom-control custom-radio custom-control-inline">
+															<input type="radio" id="tidak_diketahui" name="status_ayah" class="custom-control-input" value="Tidak Diketahui" <?php if ($siswa['status_ayah'] == 'Tidak Diketahui') echo 'checked' ?>>
+															<label class="custom-control-label" for="tidak_diketahui">Tidak Diketahui</label>
+														</div>
+													</div>
 
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Kewarganegaraan</b></i>
-												</div>
-											</div>
-											<select class='form-control' name='warga_ayah'>
-												<option value=''>Pilih Kewarganegaraan</option>";
-												<?php foreach ($kewarganegaraan as $val) { ?>
-													<?php if ($siswa['warga_ayah'] == $val) { ?>
-														<option value='<?= $val ?>' selected><?= $val ?> </option>
-													<?php  } else { ?>
-														<option value='<?= $val ?>'><?= $val ?> </option>
-													<?php } ?>
-												<?php } ?>
-											</select>
-										</div>
-									</div>
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Kewarganegaraan</b></i>
+																</div>
+															</div>
+															<select class='form-control' name='warga_ayah'>
+																<option value=''>Pilih Kewarganegaraan</option>";
+																<?php foreach ($kewarganegaraan as $val) { ?>
+																	<?php if ($siswa['warga_ayah'] == $val) { ?>
+																		<option value='<?= $val ?>' selected><?= $val ?> </option>
+																	<?php  } else { ?>
+																		<option value='<?= $val ?>'><?= $val ?> </option>
+																	<?php } ?>
+																<?php } ?>
+															</select>
+														</div>
+													</div>
 
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text ">
-													<i class="text-info"><strong>NIK</strong></i>
-												</div>
-											</div>
-											<input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="16" minlength="16" type="text" name="nik_ayah" value="<?= $siswa['nik_ayah'] ?>"="" />
-										</div>
-									</div>
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text ">
+																	<i class="text-info"><strong>NIK</strong></i>
+																</div>
+															</div>
+															<input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="16" minlength="16" type="text" name="nik_ayah" value="<?= $siswa['nik_ayah'] ?>" />
+														</div>
+													</div>
 
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text ">
-													<i class="text-info"><strong>Tempat Lahir</strong></i>
-												</div>
-											</div>
-											<input class="form-control" type="text" name="tempat_lahir_ayah" value="<?= $siswa['tempat_lahir_ayah'] ?>"="" />
-										</div>
-									</div>
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text ">
+																	<i class="text-info"><strong>Tempat Lahir</strong></i>
+																</div>
+															</div>
+															<input class="form-control" type="text" name="tempat_lahir_ayah" value="<?= $siswa['tempat_lahir_ayah'] ?>" />
+														</div>
+													</div>
 
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text ">
-													<i class="text-info"><strong>Tanggal Lahir</strong></i>
-												</div>
-											</div>
-											<input class="form-control" type="date" name="tgl_lahir_ayah" value="<?= $siswa['tgl_lahir_ayah'] ?>"="" />
-										</div>
-									</div>
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text ">
+																	<i class="text-info"><strong>Tanggal Lahir</strong></i>
+																</div>
+															</div>
+															<input class="form-control" type="date" name="tgl_lahir_ayah" value="<?= $siswa['tgl_lahir_ayah'] ?>" />
+														</div>
+													</div>
 
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Pendidikan</b></i>
-												</div>
-											</div>
-											<select class='form-control' name='pendidikan_ayah'>
-												<option value=''>Pilih Pendidikan</option>";
-												<?php foreach ($pendidikan as $val) { ?>
-													<?php if ($siswa['pendidikan_ayah'] == $val) { ?>
-														<option value='<?= $val ?>' selected><?= $val ?> </option>
-													<?php  } else { ?>
-														<option value='<?= $val ?>'><?= $val ?> </option>
-													<?php } ?>
-												<?php } ?>
-											</select>
-										</div>
-									</div>
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Pendidikan</b></i>
+																</div>
+															</div>
+															<select class='form-control' name='pendidikan_ayah'>
+																<option value=''>Pilih Pendidikan</option>";
+																<?php foreach ($pendidikan as $val) { ?>
+																	<?php if ($siswa['pendidikan_ayah'] == $val) { ?>
+																		<option value='<?= $val ?>' selected><?= $val ?> </option>
+																	<?php  } else { ?>
+																		<option value='<?= $val ?>'><?= $val ?> </option>
+																	<?php } ?>
+																<?php } ?>
+															</select>
+														</div>
+													</div>
 
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Pekerjaan</b></i>
-												</div>
-											</div>
-											<select class='form-control' name='pekerjaan_ayah'>
-												<option value=''>Pilih Pekerjaan</option>";
-												<?php foreach ($pekerjaan as $val) { ?>
-													<?php if ($siswa['pekerjaan_ayah'] == $val) { ?>
-														<option value='<?= $val ?>' selected><?= $val ?> </option>
-													<?php  } else { ?>
-														<option value='<?= $val ?>'><?= $val ?> </option>
-													<?php } ?>
-												<?php } ?>
-											</select>
-										</div>
-									</div>
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Pekerjaan</b></i>
+																</div>
+															</div>
+															<select class='form-control' name='pekerjaan_ayah'>
+																<option value=''>Pilih Pekerjaan</option>";
+																<?php foreach ($pekerjaan as $val) { ?>
+																	<?php if ($siswa['pekerjaan_ayah'] == $val) { ?>
+																		<option value='<?= $val ?>' selected><?= $val ?> </option>
+																	<?php  } else { ?>
+																		<option value='<?= $val ?>'><?= $val ?> </option>
+																	<?php } ?>
+																<?php } ?>
+															</select>
+														</div>
+													</div>
 
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Penghasilan</b></i>
-												</div>
-											</div>
-											<select class='form-control' name='penghasilan_ayah'>
-												<option value=''>Pilih Penghasilan</option>";
-												<?php foreach ($penghasilan as $val) { ?>
-													<?php if ($siswa['penghasilan_ayah'] == $val) { ?>
-														<option value='<?= $val ?>' selected><?= $val ?> </option>
-													<?php  } else { ?>
-														<option value='<?= $val ?>'><?= $val ?> </option>
-													<?php } ?>
-												<?php } ?>
-											</select>
-										</div>
-									</div>
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Penghasilan</b></i>
+																</div>
+															</div>
+															<select class='form-control' name='penghasilan_ayah'>
+																<option value=''>Pilih Penghasilan</option>";
+																<?php foreach ($penghasilan as $val) { ?>
+																	<?php if ($siswa['penghasilan_ayah'] == $val) { ?>
+																		<option value='<?= $val ?>' selected><?= $val ?> </option>
+																	<?php  } else { ?>
+																		<option value='<?= $val ?>'><?= $val ?> </option>
+																	<?php } ?>
+																<?php } ?>
+															</select>
+														</div>
+													</div>
 
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>No Hp</b></i>
-												</div>
-											</div>
-											<input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="13" minlength="10" type="text" name="no_hp_ayah" value="<?= $siswa['no_hp_ayah'] ?>"="" />
-										</div>
-									</div>
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>No Hp</b></i>
+																</div>
+															</div>
+															<input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="13" minlength="10" type="text" name="no_hp_ayah" value="<?= $siswa['no_hp_ayah'] ?>" />
+														</div>
+													</div>
 
-									<div class="form-group col-md-12">
-										<div class="text-info"><strong>Domisili Ayah</strong></div>
-										<div class="custom-control custom-radio custom-control-inline">
-											<input type="radio" id="domisili_ayah" name="domisili_ayah" class="custom-control-input" value="Dalam Negeri" <?php if ($siswa['domisili_ayah'] == 'Dalam Negeri') echo 'checked' ?>>
-											<label class="custom-control-label" for="domisili_ayah">Dalam Negeri</label>
-										</div>
-										<div class="custom-control custom-radio custom-control-inline">
-											<input type="radio" id="luar_negeri" name="domisili_ayah" class="custom-control-input" value="Luar Negeri" <?php if ($siswa['domisili_ayah'] == 'Luar Negeri') echo 'checked' ?>>
-											<label class="custom-control-label" for="luar_negeri">Luar Negeri</label>
-										</div>
-									</div>
+													<div class="form-group col-md-12">
+														<div class="text-info"><strong>Domisili Ayah</strong></div>
+														<div class="custom-control custom-radio custom-control-inline">
+															<input type="radio" id="domisili_ayah" name="domisili_ayah" class="custom-control-input" value="Dalam Negeri" <?php if ($siswa['domisili_ayah'] == 'Dalam Negeri') echo 'checked' ?>>
+															<label class="custom-control-label" for="domisili_ayah">Dalam Negeri</label>
+														</div>
+														<div class="custom-control custom-radio custom-control-inline">
+															<input type="radio" id="luar_negeri" name="domisili_ayah" class="custom-control-input" value="Luar Negeri" <?php if ($siswa['domisili_ayah'] == 'Luar Negeri') echo 'checked' ?>>
+															<label class="custom-control-label" for="luar_negeri">Luar Negeri</label>
+														</div>
+													</div>
 
-									<div class="form-group col-md-12">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Status Tempat Tinggal</b></i>
-												</div>
-											</div>
-											<select class='form-control' name='status_tmp_tinggal_ayah'>
-												<option value=''></option>";
-												<?php foreach ($statustinggal as $val) { ?>
-													<?php if ($siswa['status_tmp_tinggal_ayah'] == $val) { ?>
-														<option value='<?= $val ?>' selected><?= $val ?> </option>
-													<?php  } else { ?>
-														<option value='<?= $val ?>'><?= $val ?> </option>
-													<?php } ?>
-												<?php } ?>
-											</select>
-										</div>
-									</div>
+													<div class="form-group col-md-12">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Status Tempat Tinggal</b></i>
+																</div>
+															</div>
+															<select class='form-control' name='status_tmp_tinggal_ayah'>
+																<option value=''></option>";
+																<?php foreach ($statustinggal as $val) { ?>
+																	<?php if ($siswa['status_tmp_tinggal_ayah'] == $val) { ?>
+																		<option value='<?= $val ?>' selected><?= $val ?> </option>
+																	<?php  } else { ?>
+																		<option value='<?= $val ?>'><?= $val ?> </option>
+																	<?php } ?>
+																<?php } ?>
+															</select>
+														</div>
+													</div>
 
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Provinsi</b></i>
-												</div>
-											</div>
-											<input class="form-control" type="text" name="prov_ayah" value="<?= $siswa['prov_ayah'] ?>" />
-											<!--<select class='form-control' id="form_prov_ayah" name='prov_ayah' >
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Provinsi</b></i>
+																</div>
+															</div>
+															<input class="form-control" type="text" name="prov_ayah" value="<?= $siswa['prov_ayah'] ?>" />
+															<!--<select class='form-control' id="form_prov_ayah" name='prov_ayah' >
 															<option value=""><?= $siswa['prov_ayah'] ?></option>
 															<?php
 															$daerah = mysqli_query($koneksi, "SELECT kode,nama FROM wilayah_2020 WHERE CHAR_LENGTH(kode)=2 ORDER BY nama");
@@ -783,288 +783,288 @@ $jenjang = fetch($koneksi, 'jenjang', ['id_jenjang' => $siswa['kelas']]);
 															}
 															?>
 														</select>-->
-										</div>
-									</div>
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Kabupaten</b></i>
-												</div>
-											</div>
-											<input class="form-control" type="text" name="kab_ayah" value="<?= $siswa['kab_ayah'] ?>" />
-											<!--<select class='form-control' id="form_kab_ayah" name='kab_ayah' >
+														</div>
+													</div>
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Kabupaten</b></i>
+																</div>
+															</div>
+															<input class="form-control" type="text" name="kab_ayah" value="<?= $siswa['kab_ayah'] ?>" />
+															<!--<select class='form-control' id="form_kab_ayah" name='kab_ayah' >
 															<option value="<?= $siswa['kab_ayah'] ?>"><?= $siswa['kab_ayah'] ?></option>
 														</select>-->
-										</div>
-									</div>
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Kecamatan</b></i>
-												</div>
-											</div>
-											<input class="form-control" type="text" name="kec_ayah" value="<?= $siswa['kec_ayah'] ?>" />
-											<!--<select class='form-control' id="form_kec_ayah" name='kec_ayah' >
+														</div>
+													</div>
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Kecamatan</b></i>
+																</div>
+															</div>
+															<input class="form-control" type="text" name="kec_ayah" value="<?= $siswa['kec_ayah'] ?>" />
+															<!--<select class='form-control' id="form_kec_ayah" name='kec_ayah' >
 															<option value="<?= $siswa['kec_ayah'] ?>"><?= $siswa['kec_ayah'] ?></option>
 														</select>-->
-										</div>
-									</div>
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Desa</b></i>
-												</div>
-											</div>
-											<input class="form-control" type="text" name="desa_ayah" value="<?= $siswa['desa_ayah'] ?>" />
-											<!--<select class='form-control' id="form_des_ayah" name='desa_ayah' >
+														</div>
+													</div>
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Desa</b></i>
+																</div>
+															</div>
+															<input class="form-control" type="text" name="desa_ayah" value="<?= $siswa['desa_ayah'] ?>" />
+															<!--<select class='form-control' id="form_des_ayah" name='desa_ayah' >
 															<option value="<?= $siswa['desa_ayah'] ?>"><?= $siswa['desa_ayah'] ?></option>
 														</select>-->
-										</div>
-									</div>
-									<div class="form-group col-md-12">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text ">
-													<i class="text-info"><strong>Nama Jalan / Dusun</strong></i>
+														</div>
+													</div>
+													<div class="form-group col-md-12">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text ">
+																	<i class="text-info"><strong>Nama Jalan / Dusun</strong></i>
+																</div>
+															</div>
+															<input class="form-control" type="text" name="alamat_ayah" value="<?= $siswa['alamat_ayah'] ?>" />
+														</div>
+													</div>
+
+													<div class="form-group col-md-12">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text ">
+																	<i class="text-info"><strong>Kodepos</strong></i>
+																</div>
+															</div>
+															<input class="form-control" type="text" name="kodepos_ayah" value="<?= $siswa['kodepos_ayah'] ?>" />
+														</div>
+													</div>
+
 												</div>
-											</div>
-											<input class="form-control" type="text" name="alamat_ayah" value="<?= $siswa['alamat_ayah'] ?>"="" />
-										</div>
-									</div>
 
-									<div class="form-group col-md-12">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text ">
-													<i class="text-info"><strong>Kodepos</strong></i>
+
+												<div class="form-group">
+													<div class="col-sm-12">
+														<button type="submit" id="btnsimpan" name="submit" class="btn btn-primary">Simpan</button>
+													</div>
 												</div>
-											</div>
-											<input class="form-control" type="text" name="kodepos_ayah" value="<?= $siswa['kodepos_ayah'] ?>"="" />
+											</form>
 										</div>
-									</div>
-
-								</div>
 
 
-								<div class="form-group">
-									<div class="col-sm-12">
-										<button type="submit" id="btnsimpan" name="submit" class="btn btn-primary">Simpan</button>
-									</div>
-								</div>
-							</form>
-						</div>
+										<!-- DATA IBU -->
+										<div class="tab-pane fade" id="dataibu" role="tabpanel" aria-labelledby="data-ibu">
+											<form id="form-dataibu">
+												<input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control">
+												<div class="form-row">
+													<div class="form-group col-md-12">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Nama</b></i>
+																</div>
+															</div>
+															<input class="form-control" type="text" name="nama_ibu" value="<?= $siswa['nama_ibu'] ?>" />
+														</div>
+													</div>
+
+													<div class="form-group col-md-12">
+														<div class="text-info"><strong>Status ibu</strong></div>
+														<div class="custom-control custom-radio custom-control-inline">
+															<input type="radio" id="status_ibu" name="status_ibu" class="custom-control-input" value="Masih Hidup" <?php if ($siswa['status_ibu'] == 'Masih Hidup') echo 'checked' ?>>
+															<label class="custom-control-label" for="status_ibu">Masih Hidup</label>
+														</div>
+														<div class="custom-control custom-radio custom-control-inline">
+															<input type="radio" id="meninggal_ibu" name="status_ibu" class="custom-control-input" value="Sudah Meninggal" <?php if ($siswa['status_ibu'] == 'Sudah Meninggal') echo 'checked' ?>>
+															<label class="custom-control-label" for="meninggal_ibu">Sudah Meninggal</label>
+														</div>
+														<div class="custom-control custom-radio custom-control-inline">
+															<input type="radio" id="tidak_diketahui_ibu" name="status_ibu" class="custom-control-input" value="Tidak Diketahui" <?php if ($siswa['status_ibu'] == 'Tidak Diketahui') echo 'checked' ?>>
+															<label class="custom-control-label" for="tidak_diketahui_ibu">Tidak Diketahui</label>
+														</div>
+													</div>
+
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Kewarganegaraan</b></i>
+																</div>
+															</div>
+															<select class='form-control' name='warga_ibu'>
+																<option value=''>Pilih Kewarganegaraan</option>";
+																<?php foreach ($kewarganegaraan as $val) { ?>
+																	<?php if ($siswa['warga_ibu'] == $val) { ?>
+																		<option value='<?= $val ?>' selected><?= $val ?> </option>
+																	<?php  } else { ?>
+																		<option value='<?= $val ?>'><?= $val ?> </option>
+																	<?php } ?>
+																<?php } ?>
+															</select>
+														</div>
+													</div>
+
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text ">
+																	<i class="text-info"><strong>NIK</strong></i>
+																</div>
+															</div>
+															<input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="16" minlength="16" type="text" name="nik_ibu" value="<?= $siswa['nik_ibu'] ?>" />
+														</div>
+													</div>
+
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text ">
+																	<i class="text-info"><strong>Tempat Lahir</strong></i>
+																</div>
+															</div>
+															<input class="form-control" type="text" name="tempat_lahir_ibu" value="<?= $siswa['tempat_lahir_ibu'] ?>" />
+														</div>
+													</div>
+
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text ">
+																	<i class="text-info"><strong>Tanggal Lahir</strong></i>
+																</div>
+															</div>
+															<input class="form-control" type="date" name="tgl_lahir_ibu" value="<?= $siswa['tgl_lahir_ibu'] ?>" />
+														</div>
+													</div>
+
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Pendidikan</b></i>
+																</div>
+															</div>
+															<select class='form-control' name='pendidikan_ibu'>
+																<option value=''>Pilih Pendidikan</option>";
+																<?php foreach ($pendidikan as $val) { ?>
+																	<?php if ($siswa['pendidikan_ibu'] == $val) { ?>
+																		<option value='<?= $val ?>' selected><?= $val ?> </option>
+																	<?php  } else { ?>
+																		<option value='<?= $val ?>'><?= $val ?> </option>
+																	<?php } ?>
+																<?php } ?>
+															</select>
+														</div>
+													</div>
+
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Pekerjaan</b></i>
+																</div>
+															</div>
+															<select class='form-control' name='pekerjaan_ibu'>
+																<option value=''>Pilih Pekerjaan</option>";
+																<?php foreach ($pekerjaan as $val) { ?>
+																	<?php if ($siswa['pekerjaan_ibu'] == $val) { ?>
+																		<option value='<?= $val ?>' selected><?= $val ?> </option>
+																	<?php  } else { ?>
+																		<option value='<?= $val ?>'><?= $val ?> </option>
+																	<?php } ?>
+																<?php } ?>
+															</select>
+														</div>
+													</div>
+
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Penghasilan</b></i>
+																</div>
+															</div>
+															<select class='form-control' name='penghasilan_ibu'>
+																<option value=''>Pilih Penghasilan</option>";
+																<?php foreach ($penghasilan as $val) { ?>
+																	<?php if ($siswa['penghasilan_ibu'] == $val) { ?>
+																		<option value='<?= $val ?>' selected><?= $val ?> </option>
+																	<?php  } else { ?>
+																		<option value='<?= $val ?>'><?= $val ?> </option>
+																	<?php } ?>
+																<?php } ?>
+															</select>
+														</div>
+													</div>
+
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>No Hp</b></i>
+																</div>
+															</div>
+															<input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="13" minlength="10" type="text" name="no_hp_ibu" value="<?= $siswa['no_hp_ibu'] ?>" />
+														</div>
+													</div>
+
+													<div class="form-group col-md-12">
+														<div class="text-info"><strong>Status Tinggal Ibu</strong></div>
+														<select class="form-control" name="status_tinggal_ibu" value="<?= $siswa['status_tinggal_ibu'] ?>">
+															<option value=""><?= $siswa['status_tinggal_ibu'] ?></option>
+															<option value="Sama Dengan Ayah">Sama Dengan Ayah</option>
+															<option value="Beda Dengan Ayah">Beda Dengan Ayah</option>
+														</select>
+													</div>
 
 
-						<!-- DATA IBU -->
-						<div class="tab-pane fade" id="dataibu" role="tabpanel" aria-labelledby="data-ibu">
-							<form id="form-dataibu">
-								<input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control"="">
-								<div class="form-row">
-									<div class="form-group col-md-12">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Nama</b></i>
-												</div>
-											</div>
-											<input class="form-control" type="text" name="nama_ibu" value="<?= $siswa['nama_ibu'] ?>"="" />
-										</div>
-									</div>
+													<div class="form-group col-md-12">
+														<div class="text-info"><strong>Domisili ibu</strong></div>
+														<div class="custom-control custom-radio custom-control-inline">
+															<input type="radio" id="domisili_ibu" name="domisili_ibu" class="custom-control-input" value="Dalam Negeri" <?php if ($siswa['domisili_ibu'] == 'Dalam Negeri') echo 'checked' ?> readonly>
+															<label class="custom-control-label" for="domisili_ibu">Dalam Negeri</label>
+														</div>
+														<div class="custom-control custom-radio custom-control-inline">
+															<input type="radio" id="luar_negeri_ibu" name="domisili_ibu" class="custom-control-input" value="Luar Negeri" <?php if ($siswa['domisili_ibu'] == 'Luar Negeri') echo 'checked' ?> readonly>
+															<label class="custom-control-label" for="luar_negeri_ibu">Luar Negeri</label>
+														</div>
+													</div>
 
-									<div class="form-group col-md-12">
-										<div class="text-info"><strong>Status ibu</strong></div>
-										<div class="custom-control custom-radio custom-control-inline">
-											<input type="radio" id="status_ibu" name="status_ibu" class="custom-control-input" value="Masih Hidup" <?php if ($siswa['status_ibu'] == 'Masih Hidup') echo 'checked' ?>>
-											<label class="custom-control-label" for="status_ibu">Masih Hidup</label>
-										</div>
-										<div class="custom-control custom-radio custom-control-inline">
-											<input type="radio" id="meninggal_ibu" name="status_ibu" class="custom-control-input" value="Sudah Meninggal" <?php if ($siswa['status_ibu'] == 'Sudah Meninggal') echo 'checked' ?>>
-											<label class="custom-control-label" for="meninggal_ibu">Sudah Meninggal</label>
-										</div>
-										<div class="custom-control custom-radio custom-control-inline">
-											<input type="radio" id="tidak_diketahui_ibu" name="status_ibu" class="custom-control-input" value="Tidak Diketahui" <?php if ($siswa['status_ibu'] == 'Tidak Diketahui') echo 'checked' ?>>
-											<label class="custom-control-label" for="tidak_diketahui_ibu">Tidak Diketahui</label>
-										</div>
-									</div>
+													<div class="form-group col-md-12">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Status Tempat Tinggal</b></i>
+																</div>
+															</div>
+															<select class='form-control' name='status_tmp_tinggal_ibu' readonly>
+																<option value=''></option>";
+																<?php foreach ($statustinggal as $val) { ?>
+																	<?php if ($siswa['status_tmp_tinggal_ibu'] == $val) { ?>
+																		<option value='<?= $val ?>' selected><?= $val ?> </option>
+																	<?php  } else { ?>
+																		<option value='<?= $val ?>'><?= $val ?> </option>
+																	<?php } ?>
+																<?php } ?>
+															</select>
+														</div>
+													</div>
 
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Kewarganegaraan</b></i>
-												</div>
-											</div>
-											<select class='form-control' name='warga_ibu'>
-												<option value=''>Pilih Kewarganegaraan</option>";
-												<?php foreach ($kewarganegaraan as $val) { ?>
-													<?php if ($siswa['warga_ibu'] == $val) { ?>
-														<option value='<?= $val ?>' selected><?= $val ?> </option>
-													<?php  } else { ?>
-														<option value='<?= $val ?>'><?= $val ?> </option>
-													<?php } ?>
-												<?php } ?>
-											</select>
-										</div>
-									</div>
-
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text ">
-													<i class="text-info"><strong>NIK</strong></i>
-												</div>
-											</div>
-											<input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="16" minlength="16" type="text" name="nik_ibu" value="<?= $siswa['nik_ibu'] ?>"="" />
-										</div>
-									</div>
-
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text ">
-													<i class="text-info"><strong>Tempat Lahir</strong></i>
-												</div>
-											</div>
-											<input class="form-control" type="text" name="tempat_lahir_ibu" value="<?= $siswa['tempat_lahir_ibu'] ?>"="" />
-										</div>
-									</div>
-
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text ">
-													<i class="text-info"><strong>Tanggal Lahir</strong></i>
-												</div>
-											</div>
-											<input class="form-control" type="date" name="tgl_lahir_ibu" value="<?= $siswa['tgl_lahir_ibu'] ?>"="" />
-										</div>
-									</div>
-
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Pendidikan</b></i>
-												</div>
-											</div>
-											<select class='form-control' name='pendidikan_ibu'>
-												<option value=''>Pilih Pendidikan</option>";
-												<?php foreach ($pendidikan as $val) { ?>
-													<?php if ($siswa['pendidikan_ibu'] == $val) { ?>
-														<option value='<?= $val ?>' selected><?= $val ?> </option>
-													<?php  } else { ?>
-														<option value='<?= $val ?>'><?= $val ?> </option>
-													<?php } ?>
-												<?php } ?>
-											</select>
-										</div>
-									</div>
-
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Pekerjaan</b></i>
-												</div>
-											</div>
-											<select class='form-control' name='pekerjaan_ibu'>
-												<option value=''>Pilih Pekerjaan</option>";
-												<?php foreach ($pekerjaan as $val) { ?>
-													<?php if ($siswa['pekerjaan_ibu'] == $val) { ?>
-														<option value='<?= $val ?>' selected><?= $val ?> </option>
-													<?php  } else { ?>
-														<option value='<?= $val ?>'><?= $val ?> </option>
-													<?php } ?>
-												<?php } ?>
-											</select>
-										</div>
-									</div>
-
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Penghasilan</b></i>
-												</div>
-											</div>
-											<select class='form-control' name='penghasilan_ibu'>
-												<option value=''>Pilih Penghasilan</option>";
-												<?php foreach ($penghasilan as $val) { ?>
-													<?php if ($siswa['penghasilan_ibu'] == $val) { ?>
-														<option value='<?= $val ?>' selected><?= $val ?> </option>
-													<?php  } else { ?>
-														<option value='<?= $val ?>'><?= $val ?> </option>
-													<?php } ?>
-												<?php } ?>
-											</select>
-										</div>
-									</div>
-
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>No Hp</b></i>
-												</div>
-											</div>
-											<input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="13" minlength="10" type="text" name="no_hp_ibu" value="<?= $siswa['no_hp_ibu'] ?>"="" />
-										</div>
-									</div>
-
-									<div class="form-group col-md-12">
-										<div class="text-info"><strong>Status Tinggal Ibu</strong></div>
-										<select class="form-control" name="status_tinggal_ibu" value="<?= $siswa['status_tinggal_ibu'] ?>">
-											<option value=""><?= $siswa['status_tinggal_ibu'] ?></option>
-											<option value="Sama Dengan Ayah">Sama Dengan Ayah</option>
-											<option value="Beda Dengan Ayah">Beda Dengan Ayah</option>
-										</select>
-									</div>
-
-
-									<div class="form-group col-md-12">
-										<div class="text-info"><strong>Domisili ibu</strong></div>
-										<div class="custom-control custom-radio custom-control-inline">
-											<input type="radio" id="domisili_ibu" name="domisili_ibu" class="custom-control-input" value="Dalam Negeri" <?php if ($siswa['domisili_ibu'] == 'Dalam Negeri') echo 'checked' ?> readonly>
-											<label class="custom-control-label" for="domisili_ibu">Dalam Negeri</label>
-										</div>
-										<div class="custom-control custom-radio custom-control-inline">
-											<input type="radio" id="luar_negeri_ibu" name="domisili_ibu" class="custom-control-input" value="Luar Negeri" <?php if ($siswa['domisili_ibu'] == 'Luar Negeri') echo 'checked' ?> readonly>
-											<label class="custom-control-label" for="luar_negeri_ibu">Luar Negeri</label>
-										</div>
-									</div>
-
-									<div class="form-group col-md-12">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Status Tempat Tinggal</b></i>
-												</div>
-											</div>
-											<select class='form-control' name='status_tmp_tinggal_ibu' readonly>
-												<option value=''></option>";
-												<?php foreach ($statustinggal as $val) { ?>
-													<?php if ($siswa['status_tmp_tinggal_ibu'] == $val) { ?>
-														<option value='<?= $val ?>' selected><?= $val ?> </option>
-													<?php  } else { ?>
-														<option value='<?= $val ?>'><?= $val ?> </option>
-													<?php } ?>
-												<?php } ?>
-											</select>
-										</div>
-									</div>
-
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Provinsi</b></i>
-												</div>
-											</div>
-											<input class="form-control" type="text" name="prov_ibu" value="<?= $siswa['prov_ibu'] ?>" readonly />
-											<!--<select class='form-control' id="form_prov_ibu" name='prov_ibu' readonly>
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Provinsi</b></i>
+																</div>
+															</div>
+															<input class="form-control" type="text" name="prov_ibu" value="<?= $siswa['prov_ibu'] ?>" readonly />
+															<!--<select class='form-control' id="form_prov_ibu" name='prov_ibu' readonly>
 															<option value=""><?= $siswa['prov_ibu'] ?></option>
 															<?php
 															$daerah = mysqli_query($koneksi, "SELECT kode,nama FROM wilayah_2020 WHERE CHAR_LENGTH(kode)=2 ORDER BY nama");
@@ -1075,256 +1075,256 @@ $jenjang = fetch($koneksi, 'jenjang', ['id_jenjang' => $siswa['kelas']]);
 															}
 															?>
 														</select>-->
-										</div>
-									</div>
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Kabupaten</b></i>
-												</div>
-											</div>
-											<input class="form-control" type="text" name="kab_ibu" value="<?= $siswa['kab_ibu'] ?>" readonly />
-											<!--<select class='form-control' id="form_kab_ibu" name='kab_ibu' readonly>
+														</div>
+													</div>
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Kabupaten</b></i>
+																</div>
+															</div>
+															<input class="form-control" type="text" name="kab_ibu" value="<?= $siswa['kab_ibu'] ?>" readonly />
+															<!--<select class='form-control' id="form_kab_ibu" name='kab_ibu' readonly>
 															<option value="<?= $siswa['kab_ibu'] ?>"><?= $siswa['kab_ibu'] ?></option>
 														</select>-->
-										</div>
-									</div>
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Kecamatan</b></i>
-												</div>
-											</div>
-											<input class="form-control" type="text" name="kec_ibu" value="<?= $siswa['kec_ibu'] ?>" readonly />
-											<!--<select class='form-control' id="form_kec_ibu" name='kec_ibu' readonly>
+														</div>
+													</div>
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Kecamatan</b></i>
+																</div>
+															</div>
+															<input class="form-control" type="text" name="kec_ibu" value="<?= $siswa['kec_ibu'] ?>" readonly />
+															<!--<select class='form-control' id="form_kec_ibu" name='kec_ibu' readonly>
 															<option value="<?= $siswa['kec_ibu'] ?>"><?= $siswa['kec_ibu'] ?></option>
 														</select>-->
-										</div>
-									</div>
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Desa</b></i>
-												</div>
-											</div>
-											<input class="form-control" type="text" name="desa_ibu" value="<?= $siswa['desa_ibu'] ?>" readonly />
-											<!--<select class='form-control' id="form_des_ibu" name='desa_ibu' readonly>
+														</div>
+													</div>
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Desa</b></i>
+																</div>
+															</div>
+															<input class="form-control" type="text" name="desa_ibu" value="<?= $siswa['desa_ibu'] ?>" readonly />
+															<!--<select class='form-control' id="form_des_ibu" name='desa_ibu' readonly>
 															<option value="<?= $siswa['desa_ibu'] ?>"><?= $siswa['desa_ibu'] ?></option>
 														</select>-->
-										</div>
-									</div>
-									<div class="form-group col-md-12">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text ">
-													<i class="text-info"><strong>Nama Jalan / Dusun</strong></i>
+														</div>
+													</div>
+													<div class="form-group col-md-12">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text ">
+																	<i class="text-info"><strong>Nama Jalan / Dusun</strong></i>
+																</div>
+															</div>
+															<input class="form-control" type="text" name="alamat_ibu" value="<?= $siswa['alamat_ibu'] ?>" readonly />
+														</div>
+													</div>
+
+													<div class="form-group col-md-12">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text ">
+																	<i class="text-info"><strong>Kodepos</strong></i>
+																</div>
+															</div>
+															<input class="form-control" type="text" name="kodepos_ibu" value="<?= $siswa['kodepos_ibu'] ?>" readonly />
+														</div>
+													</div>
+
 												</div>
-											</div>
-											<input class="form-control" type="text" name="alamat_ibu" value="<?= $siswa['alamat_ibu'] ?>" readonly />
-										</div>
-									</div>
-
-									<div class="form-group col-md-12">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text ">
-													<i class="text-info"><strong>Kodepos</strong></i>
+												<div class="form-group">
+													<div class="col-sm-12">
+														<button type="submit" id="btnsimpan" name="submit" class="btn btn-primary">Simpan</button>
+													</div>
 												</div>
-											</div>
-											<input class="form-control" type="text" name="kodepos_ibu" value="<?= $siswa['kodepos_ibu'] ?>" readonly />
+											</form>
 										</div>
-									</div>
 
-								</div>
-								<div class="form-group">
-									<div class="col-sm-12">
-										<button type="submit" id="btnsimpan" name="submit" class="btn btn-primary">Simpan</button>
-									</div>
-								</div>
-							</form>
-						</div>
+										<!-- DATA WALI -->
+										<div class="tab-pane fade" id="datawali" role="tabpanel" aria-labelledby="data-wali">
+											<form id="form-datawali">
+												<input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control">
+												<div class="form-row">
+													<div class="form-group col-md-12">
+														<div class="text-info"><strong>Status wali</strong></div>
+														<div class="custom-control custom-radio custom-control-inline">
+															<input type="radio" id="status_wali" name="status_wali" class="custom-control-input" value="Sama Dengan Ayah" <?php if ($siswa['status_wali'] == 'Sama Dengan Ayah') echo 'checked' ?>>
+															<label class="custom-control-label" for="status_wali">Sama Dengan Ayah</label>
+														</div>
+														<div class="custom-control custom-radio custom-control-inline">
+															<input type="radio" id="Sama Dengan Ibu_wali" name="status_wali" class="custom-control-input" value="Sama Dengan Ibu" <?php if ($siswa['status_wali'] == 'Sama Dengan Ibu') echo 'checked' ?>>
+															<label class="custom-control-label" for="Sama Dengan Ibu_wali">Sama Dengan Ibu</label>
+														</div>
+														<div class="custom-control custom-radio custom-control-inline">
+															<input type="radio" id="Lainnya_wali" name="status_wali" class="custom-control-input" value="Lainnya" <?php if ($siswa['status_wali'] == 'Lainnya') echo 'checked' ?>>
+															<label class="custom-control-label" for="Lainnya_wali">Lainnya</label>
+														</div>
+													</div>
 
-						<!-- DATA WALI -->
-						<div class="tab-pane fade" id="datawali" role="tabpanel" aria-labelledby="data-wali">
-							<form id="form-datawali">
-								<input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control"="">
-								<div class="form-row">
-									<div class="form-group col-md-12">
-										<div class="text-info"><strong>Status wali</strong></div>
-										<div class="custom-control custom-radio custom-control-inline">
-											<input type="radio" id="status_wali" name="status_wali" class="custom-control-input" value="Sama Dengan Ayah" <?php if ($siswa['status_wali'] == 'Sama Dengan Ayah') echo 'checked' ?>>
-											<label class="custom-control-label" for="status_wali">Sama Dengan Ayah</label>
-										</div>
-										<div class="custom-control custom-radio custom-control-inline">
-											<input type="radio" id="Sama Dengan Ibu_wali" name="status_wali" class="custom-control-input" value="Sama Dengan Ibu" <?php if ($siswa['status_wali'] == 'Sama Dengan Ibu') echo 'checked' ?>>
-											<label class="custom-control-label" for="Sama Dengan Ibu_wali">Sama Dengan Ibu</label>
-										</div>
-										<div class="custom-control custom-radio custom-control-inline">
-											<input type="radio" id="Lainnya_wali" name="status_wali" class="custom-control-input" value="Lainnya" <?php if ($siswa['status_wali'] == 'Lainnya') echo 'checked' ?>>
-											<label class="custom-control-label" for="Lainnya_wali">Lainnya</label>
-										</div>
-									</div>
-
-									<div class="form-group col-md-12">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Nama</b></i>
-												</div>
-											</div>
-											<input class="form-control" type="text" name="nama_wali" value="<?= $siswa['nama_wali'] ?>" />
-										</div>
-									</div>
+													<div class="form-group col-md-12">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Nama</b></i>
+																</div>
+															</div>
+															<input class="form-control" type="text" name="nama_wali" value="<?= $siswa['nama_wali'] ?>" />
+														</div>
+													</div>
 
 
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Kewarganegaraan</b></i>
-												</div>
-											</div>
-											<select class='form-control' name='warga_wali' readonly>
-												<option value=''>Pilih Kewarganegaraan</option>";
-												<?php foreach ($kewarganegaraan as $val) { ?>
-													<?php if ($siswa['warga_wali'] == $val) { ?>
-														<option value='<?= $val ?>' selected><?= $val ?> </option>
-													<?php  } else { ?>
-														<option value='<?= $val ?>'><?= $val ?> </option>
-													<?php } ?>
-												<?php } ?>
-											</select>
-										</div>
-									</div>
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Kewarganegaraan</b></i>
+																</div>
+															</div>
+															<select class='form-control' name='warga_wali' readonly>
+																<option value=''>Pilih Kewarganegaraan</option>";
+																<?php foreach ($kewarganegaraan as $val) { ?>
+																	<?php if ($siswa['warga_wali'] == $val) { ?>
+																		<option value='<?= $val ?>' selected><?= $val ?> </option>
+																	<?php  } else { ?>
+																		<option value='<?= $val ?>'><?= $val ?> </option>
+																	<?php } ?>
+																<?php } ?>
+															</select>
+														</div>
+													</div>
 
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text ">
-													<i class="text-info"><strong>NIK</strong></i>
-												</div>
-											</div>
-											<input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="16" minlength="16" type="text" name="nik_wali" value="<?= $siswa['nik_wali'] ?>" readonly />
-										</div>
-									</div>
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text ">
+																	<i class="text-info"><strong>NIK</strong></i>
+																</div>
+															</div>
+															<input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="16" minlength="16" type="text" name="nik_wali" value="<?= $siswa['nik_wali'] ?>" readonly />
+														</div>
+													</div>
 
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text ">
-													<i class="text-info"><strong>Tempat Lahir</strong></i>
-												</div>
-											</div>
-											<input class="form-control" type="text" name="tempat_lahir_wali" value="<?= $siswa['tempat_lahir_wali'] ?>" readonly />
-										</div>
-									</div>
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text ">
+																	<i class="text-info"><strong>Tempat Lahir</strong></i>
+																</div>
+															</div>
+															<input class="form-control" type="text" name="tempat_lahir_wali" value="<?= $siswa['tempat_lahir_wali'] ?>" readonly />
+														</div>
+													</div>
 
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text ">
-													<i class="text-info"><strong>Tanggal Lahir</strong></i>
-												</div>
-											</div>
-											<input class="form-control" type="date" name="tgl_lahir_wali" value="<?= $siswa['tgl_lahir_wali'] ?>" readonly />
-										</div>
-									</div>
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text ">
+																	<i class="text-info"><strong>Tanggal Lahir</strong></i>
+																</div>
+															</div>
+															<input class="form-control" type="date" name="tgl_lahir_wali" value="<?= $siswa['tgl_lahir_wali'] ?>" readonly />
+														</div>
+													</div>
 
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Pendidikan</b></i>
-												</div>
-											</div>
-											<select class='form-control' name='pendidikan_wali' readonly>
-												<option value=''>Pilih Pendidikan</option>";
-												<?php foreach ($pendidikan as $val) { ?>
-													<?php if ($siswa['pendidikan_wali'] == $val) { ?>
-														<option value='<?= $val ?>' selected><?= $val ?> </option>
-													<?php  } else { ?>
-														<option value='<?= $val ?>'><?= $val ?> </option>
-													<?php } ?>
-												<?php } ?>
-											</select>
-										</div>
-									</div>
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Pendidikan</b></i>
+																</div>
+															</div>
+															<select class='form-control' name='pendidikan_wali' readonly>
+																<option value=''>Pilih Pendidikan</option>";
+																<?php foreach ($pendidikan as $val) { ?>
+																	<?php if ($siswa['pendidikan_wali'] == $val) { ?>
+																		<option value='<?= $val ?>' selected><?= $val ?> </option>
+																	<?php  } else { ?>
+																		<option value='<?= $val ?>'><?= $val ?> </option>
+																	<?php } ?>
+																<?php } ?>
+															</select>
+														</div>
+													</div>
 
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Pekerjaan</b></i>
-												</div>
-											</div>
-											<select class='form-control' name='pekerjaan_wali' readonly>
-												<option value=''>Pilih Pekerjaan</option>";
-												<?php foreach ($pekerjaan as $val) { ?>
-													<?php if ($siswa['pekerjaan_wali'] == $val) { ?>
-														<option value='<?= $val ?>' selected><?= $val ?> </option>
-													<?php  } else { ?>
-														<option value='<?= $val ?>'><?= $val ?> </option>
-													<?php } ?>
-												<?php } ?>
-											</select>
-										</div>
-									</div>
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Pekerjaan</b></i>
+																</div>
+															</div>
+															<select class='form-control' name='pekerjaan_wali' readonly>
+																<option value=''>Pilih Pekerjaan</option>";
+																<?php foreach ($pekerjaan as $val) { ?>
+																	<?php if ($siswa['pekerjaan_wali'] == $val) { ?>
+																		<option value='<?= $val ?>' selected><?= $val ?> </option>
+																	<?php  } else { ?>
+																		<option value='<?= $val ?>'><?= $val ?> </option>
+																	<?php } ?>
+																<?php } ?>
+															</select>
+														</div>
+													</div>
 
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Penghasilan</b></i>
-												</div>
-											</div>
-											<select class='form-control' name='penghasilan_wali' readonly>
-												<option value=''>Pilih Penghasilan</option>";
-												<?php foreach ($penghasilan as $val) { ?>
-													<?php if ($siswa['penghasilan_wali'] == $val) { ?>
-														<option value='<?= $val ?>' selected><?= $val ?> </option>
-													<?php  } else { ?>
-														<option value='<?= $val ?>'><?= $val ?> </option>
-													<?php } ?>
-												<?php } ?>
-											</select>
-										</div>
-									</div>
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Penghasilan</b></i>
+																</div>
+															</div>
+															<select class='form-control' name='penghasilan_wali' readonly>
+																<option value=''>Pilih Penghasilan</option>";
+																<?php foreach ($penghasilan as $val) { ?>
+																	<?php if ($siswa['penghasilan_wali'] == $val) { ?>
+																		<option value='<?= $val ?>' selected><?= $val ?> </option>
+																	<?php  } else { ?>
+																		<option value='<?= $val ?>'><?= $val ?> </option>
+																	<?php } ?>
+																<?php } ?>
+															</select>
+														</div>
+													</div>
 
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>No Hp</b></i>
-												</div>
-											</div>
-											<input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="13" minlength="10" type="text" name="no_hp_wali" value="<?= $siswa['no_hp_wali'] ?>" readonly />
-										</div>
-									</div>
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>No Hp</b></i>
+																</div>
+															</div>
+															<input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="13" minlength="10" type="text" name="no_hp_wali" value="<?= $siswa['no_hp_wali'] ?>" readonly />
+														</div>
+													</div>
 
-									<div class="form-group col-md-12">
-										<div class="text-info"><strong>Domisili wali</strong></div>
-										<div class="custom-control custom-radio custom-control-inline">
-											<input type="radio" id="domisili_wali" name="domisili_wali" class="custom-control-input" value="Dalam Negeri" <?php if ($siswa['domisili_wali'] == 'Dalam Negeri') echo 'checked' ?> readonly>
-											<label class="custom-control-label" for="domisili_wali">Dalam Negeri</label>
-										</div>
-										<div class="custom-control custom-radio custom-control-inline">
-											<input type="radio" id="luar_negeri_wali" name="domisili_wali" class="custom-control-input" value="Luar Negeri" <?php if ($siswa['domisili_wali'] == 'Luar Negeri') echo 'checked' ?> readonly>
-											<label class="custom-control-label" for="luar_negeri_wali">Luar Negeri</label>
-										</div>
-									</div>
+													<div class="form-group col-md-12">
+														<div class="text-info"><strong>Domisili wali</strong></div>
+														<div class="custom-control custom-radio custom-control-inline">
+															<input type="radio" id="domisili_wali" name="domisili_wali" class="custom-control-input" value="Dalam Negeri" <?php if ($siswa['domisili_wali'] == 'Dalam Negeri') echo 'checked' ?> readonly>
+															<label class="custom-control-label" for="domisili_wali">Dalam Negeri</label>
+														</div>
+														<div class="custom-control custom-radio custom-control-inline">
+															<input type="radio" id="luar_negeri_wali" name="domisili_wali" class="custom-control-input" value="Luar Negeri" <?php if ($siswa['domisili_wali'] == 'Luar Negeri') echo 'checked' ?> readonly>
+															<label class="custom-control-label" for="luar_negeri_wali">Luar Negeri</label>
+														</div>
+													</div>
 
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Provinsi</b></i>
-												</div>
-											</div>
-											<input class="form-control" type="text" name="prov_wali" value="<?= $siswa['prov_wali'] ?>" readonly />
-											<!--<select class='form-control' id="form_prov_wali" name='prov_wali' readonly>
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Provinsi</b></i>
+																</div>
+															</div>
+															<input class="form-control" type="text" name="prov_wali" value="<?= $siswa['prov_wali'] ?>" readonly />
+															<!--<select class='form-control' id="form_prov_wali" name='prov_wali' readonly>
 															<option value=""><?= $siswa['prov_wali'] ?></option>
 															<?php
 															$daerah = mysqli_query($koneksi, "SELECT kode,nama FROM wilayah_2020 WHERE CHAR_LENGTH(kode)=2 ORDER BY nama");
@@ -1335,191 +1335,191 @@ $jenjang = fetch($koneksi, 'jenjang', ['id_jenjang' => $siswa['kelas']]);
 															}
 															?>
 														</select>-->
-										</div>
-									</div>
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Kabupaten</b></i>
-												</div>
-											</div>
-											<input class="form-control" type="text" name="kab_wali" value="<?= $siswa['kab_wali'] ?>" readonly />
-											<!--<select class='form-control' id="form_kab_wali" name='kab_wali' readonly>
+														</div>
+													</div>
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Kabupaten</b></i>
+																</div>
+															</div>
+															<input class="form-control" type="text" name="kab_wali" value="<?= $siswa['kab_wali'] ?>" readonly />
+															<!--<select class='form-control' id="form_kab_wali" name='kab_wali' readonly>
 															<option value="<?= $siswa['kab_wali'] ?>"><?= $siswa['kab_wali'] ?></option>
 														</select>-->
-										</div>
-									</div>
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Kecamatan</b></i>
-												</div>
-											</div>
-											<input class="form-control" type="text" name="kec_wali" value="<?= $siswa['kec_wali'] ?>" readonly />
-											<!--<select class='form-control' id="form_kec_wali" name='kec_wali' readonly>
+														</div>
+													</div>
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Kecamatan</b></i>
+																</div>
+															</div>
+															<input class="form-control" type="text" name="kec_wali" value="<?= $siswa['kec_wali'] ?>" readonly />
+															<!--<select class='form-control' id="form_kec_wali" name='kec_wali' readonly>
 															<option value="<?= $siswa['kec_wali'] ?>"><?= $siswa['kec_wali'] ?></option>
 														</select>-->
-										</div>
-									</div>
-									<div class="form-group col-md-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text">
-													<i class="text-info"><b>Desa</b></i>
-												</div>
-											</div>
-											<input class="form-control" type="text" name="desa_wali" value="<?= $siswa['desa_wali'] ?>" readonly />
-											<!--<select class='form-control' id="form_des_wali" name='desa_wali' readonly>
+														</div>
+													</div>
+													<div class="form-group col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text">
+																	<i class="text-info"><b>Desa</b></i>
+																</div>
+															</div>
+															<input class="form-control" type="text" name="desa_wali" value="<?= $siswa['desa_wali'] ?>" readonly />
+															<!--<select class='form-control' id="form_des_wali" name='desa_wali' readonly>
 															<option value="<?= $siswa['desa_wali'] ?>"><?= $siswa['desa_wali'] ?></option>
 														</select>-->
-										</div>
-									</div>
-									<div class="form-group col-md-12">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text ">
-													<i class="text-info"><strong>Nama Jalan / Dusun</strong></i>
-												</div>
-											</div>
-											<input class="form-control" type="text" name="alamat_wali" value="<?= $siswa['alamat_wali'] ?>" readonly />
-										</div>
-									</div>
+														</div>
+													</div>
+													<div class="form-group col-md-12">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text ">
+																	<i class="text-info"><strong>Nama Jalan / Dusun</strong></i>
+																</div>
+															</div>
+															<input class="form-control" type="text" name="alamat_wali" value="<?= $siswa['alamat_wali'] ?>" readonly />
+														</div>
+													</div>
 
-									<div class="form-group col-md-12">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text ">
-													<i class="text-info"><strong>Kodepos</strong></i>
-												</div>
-											</div>
-											<input class="form-control" type="text" name="kodepos_wali" value="<?= $siswa['kodepos_wali'] ?>" readonly />
-										</div>
-									</div>
+													<div class="form-group col-md-12">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<div class="input-group-text ">
+																	<i class="text-info"><strong>Kodepos</strong></i>
+																</div>
+															</div>
+															<input class="form-control" type="text" name="kodepos_wali" value="<?= $siswa['kodepos_wali'] ?>" readonly />
+														</div>
+													</div>
 
+												</div>
+												<div class="form-group">
+													<div class="col-sm-12">
+														<button type="submit" id="btnsimpan" name="submit" class="btn btn-primary">Simpan</button>
+													</div>
+												</div>
+											</form>
+										</div>
+
+										<div class="tab-pane fade" id="datadokumen" role="tabpanel" aria-labelledby="data-dokumen">
+											<form id="form-berkas">
+												<input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control">
+												<div class="card" id="berkas-card">
+													<div class="card-body">
+														<div class="form-group row align-items-center">
+															<label class="form-control-label col-sm-3 text-md-right">Kartu Keluarga</label>
+															<div class="col-sm-6 col-md-9">
+
+																<div class="custom-file">
+																	<input type="file" name="file_kk" class="custom-file-input" id="site-kk" required>
+																	<label class="custom-file-label">Choose File</label>
+																</div>
+																<div class="form-text text-muted">File bisa berupa gambar atau pdf</div>
+															</div>
+														</div>
+														<div class="form-group row align-items-center">
+															<label class="form-control-label col-sm-3 text-md-right">Preview</label>
+															<div class="col-sm-6 col-md-6">
+																<?php if ($siswa['file_kk'] == null) { ?>
+																	<a class="btn btn-sm btn-warning"><i class="fa fa-eye    "></i>Belum Upload</a>
+																<?php } else { ?>
+																	<a title="" data-original-title="Cetak Surat" href="../<?= $siswa['file_kk'] ?>"" class=" btn btn-sm btn-info"><i class="fa fa-eye    "></i>Lihat File</a>
+
+																<?php } ?>
+
+															</div>
+														</div>
+
+														<div class="form-group row align-items-center">
+															<label class="form-control-label col-sm-3 text-md-right">Akta Kelahiran</label>
+															<div class="col-sm-6 col-md-9">
+
+																<div class="custom-file">
+																	<input type="file" name="file_akte" class="custom-file-input" id="site-akta" required>
+																	<label class="custom-file-label">Choose File</label>
+																</div>
+																<div class="form-text text-muted">File bisa berupa gambar atau pdf</div>
+															</div>
+														</div>
+														<div class="form-group row align-items-center">
+															<label class="form-control-label col-sm-3 text-md-right">Preview</label>
+															<div class="col-sm-6 col-md-6">
+																<?php if ($siswa['file_akte'] == null) { ?>
+																	<a class="btn btn-sm btn-warning"><i class="fa fa-eye    "></i>Belum Upload</a>
+																<?php } else { ?>
+																	<a title="" data-original-title="Cetak Surat" href="../<?= $siswa['file_akte'] ?>"" class=" btn btn-sm btn-info"><i class="fa fa-eye    "></i>Lihat File</a>
+																<?php } ?>
+
+															</div>
+														</div>
+														<div class="form-group row align-items-center">
+															<label class="form-control-label col-sm-3 text-md-right">Ijazah</label>
+															<div class="col-sm-6 col-md-9">
+
+																<div class="custom-file">
+																	<input type="file" name="file_ijazah" class="custom-file-input" id="site-ijazah">
+																	<label class="custom-file-label">Choose File</label>
+																</div>
+																<div class="form-text text-muted">File bisa berupa gambar atau pdf</div>
+															</div>
+														</div>
+														<div class="form-group row align-items-center">
+															<label class="form-control-label col-sm-3 text-md-right">Preview</label>
+															<div class="col-sm-6 col-md-6">
+																<?php if ($siswa['file_ijazah'] == null) { ?>
+																	<a class="btn btn-sm btn-warning"><i class="fa fa-eye    "></i>Belum Upload</a>
+																<?php } else { ?>
+																	<a title="" data-original-title="Cetak Surat" href="../<?= $siswa['file_ijazah'] ?>"" class=" btn btn-sm btn-info"><i class="fa fa-eye    "></i>Lihat File</a>
+																<?php } ?>
+
+															</div>
+														</div>
+														<div class="form-group row align-items-center">
+															<label class="form-control-label col-sm-3 text-md-right">Kartu Indonesia Pintar</label>
+															<div class="col-sm-6 col-md-9">
+
+																<div class="custom-file">
+																	<input type="file" name="file_kip" class="custom-file-input" id="site-kip">
+																	<label class="custom-file-label">Choose File</label>
+																</div>
+																<div class="form-text text-muted">File bisa berupa gambar atau pdf</div>
+															</div>
+														</div>
+														<div class="form-group row align-items-center">
+															<label class="form-control-label col-sm-3 text-md-right">Preview</label>
+															<div class="col-sm-6 col-md-6">
+																<?php if ($siswa['file_kip'] == null) { ?>
+																	<a class="btn btn-sm btn-warning"><i class="fa fa-eye    "></i>Belum Upload</a>
+																<?php } else { ?>
+																	<a title="" data-original-title="Cetak Surat" href="../<?= $siswa['file_kip'] ?>"" class=" btn btn-sm btn-info"><i class="fa fa-eye    "></i>Lihat File</a>
+																<?php } ?>
+
+															</div>
+														</div>
+
+													</div>
+													<div class="card-footer bg-whitesmoke text-md-right">
+														<button type="submit" class="btn btn-primary" id="save-btn">Save Changes</button>
+														<button class="btn btn-secondary" type="button">Reset</button>
+													</div>
+												</div>
+											</form>
+										</div>
 								</div>
-								<div class="form-group">
-									<div class="col-sm-12">
-										<button type="submit" id="btnsimpan" name="submit" class="btn btn-primary">Simpan</button>
-									</div>
-								</div>
-							</form>
-						</div>
 
-						<div class="tab-pane fade" id="datadokumen" role="tabpanel" aria-labelledby="data-dokumen">
-							<form id="form-berkas">
-								<input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control"="">
-								<div class="card" id="berkas-card">
-									<div class="card-body">
-										<div class="form-group row align-items-center">
-											<label class="form-control-label col-sm-3 text-md-right">Kartu Keluarga</label>
-											<div class="col-sm-6 col-md-9">
 
-												<div class="custom-file">
-													<input type="file" name="file_kk" class="custom-file-input" id="site-kk" required>
-													<label class="custom-file-label">Choose File</label>
-												</div>
-												<div class="form-text text-muted">File bisa berupa gambar atau pdf</div>
-											</div>
-										</div>
-										<div class="form-group row align-items-center">
-											<label class="form-control-label col-sm-3 text-md-right">Preview</label>
-											<div class="col-sm-6 col-md-6">
-												<?php if ($siswa['file_kk'] == null) { ?>
-													<a class="btn btn-sm btn-warning"><i class="fa fa-eye    "></i>Belum Upload</a>
-												<?php } else { ?>
-													<a title="" data-original-title="Cetak Surat" href="../<?= $siswa['file_kk'] ?>"" class=" btn btn-sm btn-info"><i class="fa fa-eye    "></i>Lihat File</a>
-
-												<?php } ?>
-
-											</div>
-										</div>
-
-										<div class="form-group row align-items-center">
-											<label class="form-control-label col-sm-3 text-md-right">Akta Kelahiran</label>
-											<div class="col-sm-6 col-md-9">
-
-												<div class="custom-file">
-													<input type="file" name="file_akte" class="custom-file-input" id="site-akta" required>
-													<label class="custom-file-label">Choose File</label>
-												</div>
-												<div class="form-text text-muted">File bisa berupa gambar atau pdf</div>
-											</div>
-										</div>
-										<div class="form-group row align-items-center">
-											<label class="form-control-label col-sm-3 text-md-right">Preview</label>
-											<div class="col-sm-6 col-md-6">
-												<?php if ($siswa['file_akte'] == null) { ?>
-													<a class="btn btn-sm btn-warning"><i class="fa fa-eye    "></i>Belum Upload</a>
-												<?php } else { ?>
-													<a title="" data-original-title="Cetak Surat" href="../<?= $siswa['file_akte'] ?>"" class=" btn btn-sm btn-info"><i class="fa fa-eye    "></i>Lihat File</a>
-												<?php } ?>
-
-											</div>
-										</div>
-										<div class="form-group row align-items-center">
-											<label class="form-control-label col-sm-3 text-md-right">Ijazah</label>
-											<div class="col-sm-6 col-md-9">
-
-												<div class="custom-file">
-													<input type="file" name="file_ijazah" class="custom-file-input" id="site-ijazah">
-													<label class="custom-file-label">Choose File</label>
-												</div>
-												<div class="form-text text-muted">File bisa berupa gambar atau pdf</div>
-											</div>
-										</div>
-										<div class="form-group row align-items-center">
-											<label class="form-control-label col-sm-3 text-md-right">Preview</label>
-											<div class="col-sm-6 col-md-6">
-												<?php if ($siswa['file_ijazah'] == null) { ?>
-													<a class="btn btn-sm btn-warning"><i class="fa fa-eye    "></i>Belum Upload</a>
-												<?php } else { ?>
-													<a title="" data-original-title="Cetak Surat" href="../<?= $siswa['file_ijazah'] ?>"" class=" btn btn-sm btn-info"><i class="fa fa-eye    "></i>Lihat File</a>
-												<?php } ?>
-
-											</div>
-										</div>
-										<div class="form-group row align-items-center">
-											<label class="form-control-label col-sm-3 text-md-right">Kartu Indonesia Pintar</label>
-											<div class="col-sm-6 col-md-9">
-
-												<div class="custom-file">
-													<input type="file" name="file_kip" class="custom-file-input" id="site-kip">
-													<label class="custom-file-label">Choose File</label>
-												</div>
-												<div class="form-text text-muted">File bisa berupa gambar atau pdf</div>
-											</div>
-										</div>
-										<div class="form-group row align-items-center">
-											<label class="form-control-label col-sm-3 text-md-right">Preview</label>
-											<div class="col-sm-6 col-md-6">
-												<?php if ($siswa['file_kip'] == null) { ?>
-													<a class="btn btn-sm btn-warning"><i class="fa fa-eye    "></i>Belum Upload</a>
-												<?php } else { ?>
-													<a title="" data-original-title="Cetak Surat" href="../<?= $siswa['file_kip'] ?>"" class=" btn btn-sm btn-info"><i class="fa fa-eye    "></i>Lihat File</a>
-												<?php } ?>
-
-											</div>
-										</div>
-
-									</div>
-									<div class="card-footer bg-whitesmoke text-md-right">
-										<button type="submit" class="btn btn-primary" id="save-btn">Save Changes</button>
-										<button class="btn btn-secondary" type="button">Reset</button>
-									</div>
-								</div>
-							</form>
 						</div>
 					</div>
-
-
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
-</div>
 </div>
 
 

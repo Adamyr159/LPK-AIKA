@@ -14,6 +14,49 @@ if ($pg == 'ubah-pass') {
     $id_siswa = $_POST['id_siswa'];
     update($koneksi, 'siswa', $data, ['id_siswa' => $id_siswa]);
 }
+if ($pg == 'update-data-diri') {
+    $status = (isset($_POST['status'])) ? 1 : 0;
+    $email = str_replace("'", "`", $_POST['email']);
+    $nama_siswa = str_replace("'", "`", $_POST['nama_siswa']);
+    $data = [
+        'nama_siswa' => $_POST['nama_siswa'] ?? null,
+        'warga_siswa' => $_POST['warga_siswa'] ?? null,
+        'alamat_siswa' => $_POST['alamat_siswa'] ?? null,
+        'nisn' => $_POST['nisn'] ?? null,
+        'nis' => $_POST['nis'] ?? null,
+        'nik' => $_POST['nik'] ?? null,
+        'tempat_lahir' => $_POST['tempat_lahir'] ?? null,
+        'tgl_lahir' => $_POST['tgl_lahir'] ?? null,
+        'jk' => $_POST['jk'] ?? null,
+        'asal_sekolah' => $_POST['asal_sekolah'] ?? null,
+        'npsn_sekolah' => $_POST['npsn_sekolah'] ?? null,
+        'kelas' => $_POST['kelas'] ?? null,
+        'agama' => $_POST['agama'] ?? null,
+        'no_hp' => $_POST['no_hp'] ?? null,
+        'email' => $_POST['email'] ?? null,
+        'hobi' => $_POST['hobi'] ?? null,
+        'no_hp' => $_POST['no_hp'] ?? null,
+
+        'akademik_jenjang' => $_POST['akademik_jenjang'] ?? null,
+        'akademik_fakultas' => $_POST['akademik_fakultas'] ?? null,
+        'akademik_prodi' => $_POST['akademik_prodi'] ?? null,
+        'akademik_tahun_masuk' => $_POST['akademik_tahun_masuk'] ?? null,
+
+        'pekerjaan_nama' => $_POST['pekerjaan_nama'] ?? null,
+        'pekerjaan_tempat' => $_POST['pekerjaan_tempat'] ?? null,
+        'pekerjaan_alamat' => $_POST['pekerjaan_alamat'] ?? null,
+        'pekerjaan_gelombang' => $_POST['pekerjaan_gelombang'] ?? null,
+
+
+    ];
+    $id_siswa = $_POST['id_siswa'];
+    update($koneksi, 'siswa', $data, ['id_siswa' => $id_siswa]);
+
+    // return ke halaman index dengan pesan berhasil
+    $_SESSION['success'] = "Data diri berhasil di update";
+    header("location:../index.php");
+}
+
 if ($pg == 'simpandaftar') {
     $status = (isset($_POST['status'])) ? 1 : 0;
     $email = str_replace("'", "`", $_POST['email']);
